@@ -10,7 +10,7 @@
         <li class="nav-item"><a href="#" class="nav-link">Fitneses</a></li>
         <li class="nav-item"><a href="#" class="nav-link">AboutUs</a></li>
         <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="http://fitnes/login.php" class="nav-link active">Login</a></li>
+        <li class="nav-item"><a href="http://fitnes/register.php" class="nav-link active">Login</a></li>
       </ul>
     </header>
   </div>

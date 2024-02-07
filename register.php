@@ -17,6 +17,9 @@ include 'user.php';
   <form action="register.php" method="post">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
+      <p for="floatingInput"><?=$errMsgEmpty?></p>
+    </div>
+    <div class="form-floating">
       <input name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
       <label for="floatingInput">Name</label>
     </div>
