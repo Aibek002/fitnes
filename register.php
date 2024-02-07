@@ -1,3 +1,6 @@
+<?php 
+include 'user.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,22 +14,22 @@
   include 'header.php'
   ?>
 <main class="form-signin w-50 m-auto">
-  <form>
+  <form action="register.php" method="post">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Alex">
+      <input name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
       <label for="floatingInput">Name</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
+      <input  name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
       <label for="floatingInput">SurName</label>
     </div>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input  name='password' type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">New Password</label>
     </div>
     <div class="form-floating">

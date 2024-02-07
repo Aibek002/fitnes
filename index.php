@@ -9,7 +9,8 @@
   </head>
   <body style="background-color: #343a40;color:aliceblue">
   <?php 
-  include 'header.php'
+  include 'header.php';
+  include 'user.php'
   ?>
 
   <div class="container pb-3">
