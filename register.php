@@ -32,11 +32,11 @@ include 'user.php';
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input  name='password' type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input  name='passwordFir' type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">New Password</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input name='passwordSec' type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">re-Password</label>
     </div>
 
