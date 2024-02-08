@@ -12,17 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($email === '' || $name === '' || $passFir === '') {
         $errMsgEmpty = "не все поля заполнены!";
-    } elseif(mb_strlen($name)<2){
-        $errMsgEmpty = "Имя должно быть не менее 3 символов";        
-    }elseif(mb_strlen($surname,'UTF8')<2){
-        $errMsgEmpty = "Фамилия должно быть не менее 3 символов";       
-    }elseif($passFir !== $passSec){
-        $errMsgEmpty = "Пароли не совпадают";       
-    }else {
+    } elseif (mb_strlen($name, 'UTF-8') < 2) {
+        $errMsgEmpty = "Имя должно быть не менее 3 символов";
+    } elseif (mb_strlen($surname, 'UTF-8') < 2) {
+        $errMsgEmpty = "Фамилия должно быть не менее 3 символов";
+        exit();
+    } elseif ($passFir !== $passSec) {
+        $errMsgEmpty = "Пароли не совпадают";
+    } else {
 
         $request_data = selectOne('data_registration', ['email' => $email]);
         if ($request_data) {
-            $errMsgEmpty = "Такой email уже существует!";       
+            $errMsgEmpty = "Такой email уже существует!";
         } else {
             $data_register = [
                 'name' => $name,
@@ -33,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $isSabmit = true;
             insert('data_registration', $data_register);
         }
-        
     }
 } 
 
