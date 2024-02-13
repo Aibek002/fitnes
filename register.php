@@ -20,15 +20,15 @@ include './connectDB/user.php';
       <p for="floatingInput"><?=$errMsgEmpty?></p>
     </div>
     <div class="form-floating">
-      <input name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
+      <input value='<?=$name ?>' name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
       <label for="floatingInput">Name</label>
     </div>
     <div class="form-floating">
-      <input  name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
+      <input value='<?=$surname ?>' name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
       <label for="floatingInput">SurName</label>
     </div>
     <div class="form-floating">
-      <input  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input value='<?=$email ?>'  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">

@@ -4,6 +4,7 @@ include('./database/db.php');
 
 $isSabmit = false;
 $errMsgEmpty = "";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $surname = trim($_POST['surname']);
@@ -21,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errMsgEmpty = "Пароли не совпадают";
     } else {
 
+        
         $request_data = selectOne('data_registration', ['email' => $email]);
         if ($request_data) {
             $errMsgEmpty = "Такой email уже существует!";
@@ -33,8 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
             $isSabmit = true;
             insert('data_registration', $data_register);
+            $errMsgEmpty='Пользователь' . "<strong> " . $name ." " . $surname . " </strong>" . 'успешно зарегистрирован!' ;
         }
     }
 } 
+else{
+
+
+}
 
 // $pass=password_hash( $_POST['password'],PASSWORD_DEFAULT);
