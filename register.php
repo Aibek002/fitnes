@@ -11,7 +11,7 @@ include './connectDB/user.php';
   </head>
 <body>
 <?php 
-  include './HeaderAndFooter/header.php'
+  include './include/header.php'
   ?>
 <main class="form-signin w-50 m-auto">
   <form action="register.php" method="post">

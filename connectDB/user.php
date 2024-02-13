@@ -1,5 +1,6 @@
 <?php
-include './connectDB/user.php';
+include('./database/db.php');
+
 
 $isSabmit = false;
 $errMsgEmpty = "";

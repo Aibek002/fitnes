@@ -1,5 +1,5 @@
  <?php
-    require 'connectDB.php';
+   include('./connectDB/connectDB.php');
 
 
     // --prints data----
