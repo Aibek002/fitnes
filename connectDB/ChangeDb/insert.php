@@ -1,6 +1,5 @@
-
-    <?php
-    require 'settings.php';
+ <?php
+    require 'connectDB.php';
 
 
     // --prints data----

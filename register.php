@@ -1,5 +1,5 @@
 <?php 
-include 'user.php';
+include './connectDB/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@ include 'user.php';
   </head>
 <body>
 <?php 
-  include 'header.php'
+  include './HeaderAndFooter/header.php'
   ?>
 <main class="form-signin w-50 m-auto">
   <form action="register.php" method="post">
