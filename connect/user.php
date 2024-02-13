@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errMsgEmpty = "Имя должно быть не менее 3 символов";
     } elseif (mb_strlen($surname, 'UTF-8') < 2) {
         $errMsgEmpty = "Фамилия должно быть не менее 3 символов";
-        exit();
     } elseif ($passFir !== $passSec) {
         $errMsgEmpty = "Пароли не совпадают";
     } else {
