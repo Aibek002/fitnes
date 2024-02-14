@@ -39,13 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo $id;
             $user = selectOne('data_registration', ['id_user' => $id]); // Получаем пользователя по ID
             $_SESSION['id'] = $user['id_user']; // Устанавливаем ID пользователя в сессию
-            $_SESSION['name']=$user['name'];
-            $_SESSION['surname']=$user['surname'];
-            $_SESSION['email']=$user['email'];
-            header('location:' . BASE_URL);
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['surname'] = $user['surname'];
+            $_SESSION['email'] = $user['email'];
+            if ($_SESSION('admin')) {
+                header('location:' . BASE_URL);
+            } else {
+                header('location:' . BASE_URL . 'admin/admin.php');
+            }
             // Выводим содержимое массива $_SESSION
             // prints($_SESSION);
-            
+
             // $errMsgEmpty='Пользователь' . "<strong> " . $name ." " . $surname . " </strong>" . 'успешно зарегистрирован!' ;
         }
     }
