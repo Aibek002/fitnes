@@ -1,8 +1,7 @@
  <?php
-   include('./connectDB/connectDB.php');
+    include('./database/connectDB.php');
 
 
-    // --prints data----
     function prints($value)
     {
         echo '<pre>';
@@ -25,23 +24,23 @@
     function selectOne($table, $params = [])
     {
         global $connection;
-    
+
         $sql = 'SELECT * FROM ' . $table;
         $where = ''; // Инициализируем строку для условия WHERE
-    
+
         foreach ($params as $key => $value) {
             if (!is_numeric($value)) {
                 $value = "' " . $value . " '";
             }
-    
+
             // Формируем часть условия WHERE для текущей пары ключ-значение
             $where .= ($where ? ' AND ' : '') . "$key = $value";
         }
-    
+
         if (!empty($where)) {
             $sql .= ' WHERE ' . $where; // Добавляем условие WHERE к запросу, если оно сформировано
         }
-    
+
         $query = $connection->prepare($sql);
         $query->execute();
         dbCheckError($query);
@@ -97,6 +96,10 @@
         $query = $connection->prepare($sql);
         $query->execute();
         dbCheckError($query);
+
+        $id = $connection->lastInsertId();
+
+        return $id; // Возвращаем ID
     }
 
     function update($table, $id, $parram)
@@ -129,17 +132,17 @@
 
 
         $sql = "DELETE FROM $table WHERE id_user=$id ";
-        prints($sql);
+        // prints($sql);
         // exit();
         $query = $connection->prepare($sql);
         $query->execute();
         dbCheckError($query);
     }
-    $arrData = [
-        'name' => 'Aibek',
-        'surname' => 'Aibek',
-        'kg' => '88',
-    ];
+    // $arrData = [
+    //     'name' => 'Aibek',
+    //     'surname' => 'Aibek',
+    //     'kg' => '88',
+    // ];
     // delete('fitnes', 4);
     // update('fitnes', 2 ,$arrData);
     // insert('fitnes',$arrData);

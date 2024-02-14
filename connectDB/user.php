@@ -1,6 +1,7 @@
 <?php
+session_start();
 include('./database/db.php');
-
+include './path.php';
 
 $isSabmit = false;
 $errMsgEmpty = "";
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errMsgEmpty = "Пароли не совпадают";
     } else {
 
-        
+
         $request_data = selectOne('data_registration', ['email' => $email]);
         if ($request_data) {
             $errMsgEmpty = "Такой email уже существует!";
@@ -31,17 +32,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $name,
                 'surname' => $surname,
                 'email' => $email,
-                'password' => $pass,
+                'password' => $passFir,
             ];
-            $isSabmit = true;
-            insert('data_registration', $data_register);
-            $errMsgEmpty='Пользователь' . "<strong> " . $name ." " . $surname . " </strong>" . 'успешно зарегистрирован!' ;
+            $isSubmit = true; // Предполагаю, что это у вас установка флага, чтобы показать, что данные были отправлены
+            $id = insert('data_registration', $data_register); // Вставляем данные и получаем ID
+            echo $id;
+            $user = selectOne('data_registration', ['id_user' => $id]); // Получаем пользователя по ID
+            $_SESSION['id'] = $user['id_user']; // Устанавливаем ID пользователя в сессию
+            $_SESSION['name']=$user['name'];
+            $_SESSION['surname']=$user['surname'];
+            $_SESSION['email']=$user['email'];
+            header('location:' . BASE_URL);
+            // Выводим содержимое массива $_SESSION
+            // prints($_SESSION);
+            
+            // $errMsgEmpty='Пользователь' . "<strong> " . $name ." " . $surname . " </strong>" . 'успешно зарегистрирован!' ;
         }
     }
-} 
-else{
-
-
+} else {
 }
 
 // $pass=password_hash( $_POST['password'],PASSWORD_DEFAULT);
