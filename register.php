@@ -1,5 +1,5 @@
 <?php 
-include 'user.php';
+include './connectDB/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,29 +11,32 @@ include 'user.php';
   </head>
 <body>
 <?php 
-  include 'header.php'
+  include './include/header.php'
   ?>
 <main class="form-signin w-50 m-auto">
   <form action="register.php" method="post">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
-      <input name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
+      <p for="floatingInput"><?=$errMsgEmpty?></p>
+    </div>
+    <div class="form-floating">
+      <input value='<?=$name ?>' name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
       <label for="floatingInput">Name</label>
     </div>
     <div class="form-floating">
-      <input  name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
+      <input value='<?=$surname ?>' name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
       <label for="floatingInput">SurName</label>
     </div>
     <div class="form-floating">
-      <input  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input value='<?=$email ?>'  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input  name='password' type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input  name='passwordFir' type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">New Password</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input name='passwordSec' type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">re-Password</label>
     </div>
 
