@@ -6,7 +6,9 @@ include './path.php';
 $isSabmit = false;
 $errMsgEmpty = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
+    prints($_POST);
+    exit();
     $name = trim($_POST['name']);
     $surname = trim($_POST['surname']);
     $email = trim($_POST['email']);
