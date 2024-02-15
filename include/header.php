@@ -12,13 +12,10 @@
       <li class="nav-item"><a href="<? echo BASE_URL . 'fitneses.php'?>" class="nav-link">Fitneses</a></li>
       <li class="nav-item"><a href="<? echo BASE_URL . 'about.php'?>" class="nav-link">AboutUs</a></li>
       <li class="nav-item"><a href="<? echo BASE_URL . 'faqs.php'?>" class="nav-link">FAQs</a></li>
-      <?php if (isset($_SESSION['id'])) : ?>
-        <li class="nav-item"><a href="#" class="nav-link "><?= $_SESSION['name'] . " " . $_SESSION['surname']; ?></a></li>
+        <!-- <li class="nav-item"><a href="#" class="nav-link "><?= $_SESSION['name'] . " " . $_SESSION['surname']; ?></a></li> -->
 
-      <?php else : ?>
-        <li class="nav-item"><a href="<? echo BASE_URL . 'register.php'?>" class="nav-link active">Sign in</a></li>
+        <li class="nav-item"><a href="<? echo BASE_URL . 'register.php'?>" class="nav-link active">Sign in</a></li><hr/>
         <li class="nav-item"><a href="<? echo BASE_URL . 'login.php'?>" class="nav-link active">Sign up</a></li>
-      <?php endif ?>
     </ul>
   </header>
 </div>
