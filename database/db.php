@@ -16,7 +16,7 @@
         $errInfo = $query->errorInfo();
         if ($errInfo[0] !== PDO::ERR_NONE) {
             echo $errInfo[2];
-            exit();
+            // exit();
         }
         return true;
     }
@@ -119,7 +119,7 @@
         }
         $sql = "UPDATE $table SET $str  WHERE  id_user = $id ";
         // prints($sql);
-        exit();
+        // exit();
         $query = $connection->prepare($sql);
         $query->execute();
         dbCheckError($query);

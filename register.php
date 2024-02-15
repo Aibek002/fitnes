@@ -15,7 +15,7 @@ include './connectDB/user.php';
   ?>
 <main class="form-signin w-50 m-auto">
   <form action="register.php" method="post">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
     <div class="form-floating">
       <p for="floatingInput"><?=$errMsgEmpty?></p>
     </div>
