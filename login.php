@@ -31,7 +31,7 @@ include './connectDB/user.php';
                 <p for="floatingInput"><?= $errMsgEmpty ?></p>
             </div>
             <div class="form-floating">
-                <input type="email" name="email" value='<? $email ?>' class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" name="email" value='<?= $email ?>' class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
