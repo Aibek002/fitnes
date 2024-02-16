@@ -28,7 +28,7 @@ include './connectDB/user.php';
       <label for="floatingInput">SurName</label>
     </div>
     <div class="form-floating">
-      <input value='<?=$email ?>'  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input value='<?php echo $email ?>'  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
