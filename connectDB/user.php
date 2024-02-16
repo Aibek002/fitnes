@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
             $id = insert('data_registration', $data_register);
             if ($id) {
                 $user = selectOne('data_registration', ['id_user' => $id]);
-                $_SESSION['id'] = $user['id_user'];
-                $_SESSION['name'] = $user['name'];
-                $_SESSION['surname'] = $user['surname'];
-                $_SESSION['email'] = $user['email'];
+                // $_SESSION['id'] = $user['id_user'];
+                // $_SESSION['name'] = $user['name'];
+                // $_SESSION['surname'] = $user['surname'];
+                // $_SESSION['email'] = $user['email'];
                 header('location:' . BASE_URL . 'login.php');
             } else {
                 echo "Ошибка при регистрации пользователя";
@@ -56,21 +56,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
     
-// Проверяем, есть ли уже у нас счетчик в сессии
-if (!isset($_SESSION['login_attempts'])) {
-    // Если нет, инициализируем его и устанавливаем значение 0
-    $_SESSION['login_attempts'] = 0;
-}
+// // Проверяем, есть ли уже у нас счетчик в сессии
+// if (!isset($_SESSION['login_attempts'])) {
+//     // Если нет, инициализируем его и устанавливаем значение 0
+//     $_SESSION['login_attempts'] = 0;
+// }
 
-// Увеличиваем счетчик попыток авторизации
-$_SESSION['login_attempts']++;
+// // Увеличиваем счетчик попыток авторизации
+// $_SESSION['login_attempts']++;
 
-// Проверяем количество попыток
-if ($_SESSION['login_attempts'] >= 2) {
-    // Если количество попыток превысило 3, выполните необходимые действия, например, блокируйте доступ пользователя
-    echo "Вы превысили лимит попыток авторизации. Пожалуйста, попробуйте позже.";
-    exit; // Выход из скрипта
-}
+// // Проверяем количество попыток
+// if ($_SESSION['login_attempts'] >= 3) {
+//     // Если количество попыток превысило 3, выполните необходимые действия, например, блокируйте доступ пользователя
+//     echo "Вы превысили лимит попыток авторизации. Пожалуйста, попробуйте позже.";
+//     exit; // Выход из скрипта
+// }
 
 // Здесь выполняется ваш код аутентификации и проверки пароля
 
