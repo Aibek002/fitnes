@@ -22,31 +22,36 @@ include './connectDB/user.php';
     ?>
 
 
-
-    <main class="form-signin w-100 m-auto" style="width: 50%;">
-
-        <form action="login.php" method="post">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-            <div class="form-floating">
-                <p for="floatingInput"><?= $errMsgEmpty ?></p>
+    <main>
+        <div class="container">
+            <div class="text">
+                <button type="button" class="back-btn"><img src="back-icon.png" alt="Back"></button>
+                <h1>Sign In</h1>
             </div>
-            <div class="form-floating">
-                <input type="email" name="email" value='<?= $email ?>' class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+            <div class="text1">
+                <h3>Sign-in with your phone</h3>
+                <p>The activation code will be sent via SMS</p>
             </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <select id="country-code">
+                        <option value="+7">+7 (KZ)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
+                <button type="submit" class="continue-btn">Continue</button>
+            </form>
+            <div class="alternative-sign-in">
+                <p>Or</p>
+                <button type="button" class="Signemail-btn">Sign in with email</button>
+                <a href="#" class="social-link"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#" class="social-link"><img src="google-icon.png" alt="Google"></a>
             </div>
-
-            <!-- <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Remember me
-                </label>
-            </div> -->
-            <button name='button-log' class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-        </form>
+        </div>
     </main>
     <?
     include './include/footer.php';
