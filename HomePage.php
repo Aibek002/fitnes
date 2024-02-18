@@ -14,7 +14,7 @@
 <body>
 <? include('./include/header.php'); ?>
 <? include('./include/footer.php'); ?>
-/*f*/
+
 </body>
 
 </html>

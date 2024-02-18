@@ -26,26 +26,22 @@ include './connectDB/user.php';
         <div class="container">
             <div class="text">
                 <button type="button" class="back-btn"><img src="back-icon.png" alt="Back"></button>
-                <h1>Sign Up</h1>
+                <h1>Sign In</h1>
             </div>
             <div class="text1">
-                <h3>Sign up with Email</h3>
+                <h3>Enter code from SMS</h3>
+                <p>Enter sent code to your number</p>
             </div>
             <form action="#" method="post">
                 <div class="input-group">
-                    <input type="Name" id="Name" placeholder="Name" required>
-                  </div>
-                <div class="input-group">
-                    <input type="Username" id="Username" placeholder="Username" required>
-                    
-                </div>
-                <div class="input-group">
-                    <input type="email" id="Email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="Password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="continue-btn">Continue</button>
+                  <div class="verification-code">
+        <input type="text" id="digit1" maxlength="1" required>
+        <input type="text" id="digit2" maxlength="1" required>
+        <input type="text" id="digit3" maxlength="1" required>
+        <input type="text" id="digit4" maxlength="1" required>
+      </div>
+                   </div>
+                <button type="submit" class="continue-btn">Confirm button</button>
             </form>
             
         </div>
