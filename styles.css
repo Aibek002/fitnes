@@ -35,7 +35,7 @@ body {
   .input-group {
     margin-bottom: 20px;
   }
-  
+
   .verification-code {
     display: flex;
     justify-content: center;
@@ -58,6 +58,43 @@ body {
   }
   
   #phone {
+    width: 100%;
+    padding: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  
+  #Name {
+    width: 100%;
+    padding: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  #Username {
+    width: 100%;
+    padding: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  #Email {
+    width: 100%;
+    padding: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  #Password {
     width: 100%;
     padding: 1px;
     padding-top: 10px;
