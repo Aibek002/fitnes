@@ -29,28 +29,21 @@ include './connectDB/user.php';
                 <h1>Sign In</h1>
             </div>
             <div class="text1">
-                <h3>Sign-in with your phone</h3>
-                <p>The activation code will be sent via SMS</p>
+                <h3>Enter code from SMS</h3>
+                <p>Enter sent code to your number</p>
             </div>
             <form action="#" method="post">
                 <div class="input-group">
-                    <select id="country-code">
-                        <option value="+7">+7 (KZ)</option>
-                        <option value="+1">+1 (USA)</option>
-                        <option value="+44">+44 (UK)</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
-                </div>
-                <button type="submit" class="continue-btn">Continue</button>
+                  <div class="verification-code">
+        <input type="text" id="digit1" maxlength="1" required>
+        <input type="text" id="digit2" maxlength="1" required>
+        <input type="text" id="digit3" maxlength="1" required>
+        <input type="text" id="digit4" maxlength="1" required>
+      </div>
+                   </div>
+                <button type="submit" class="continue-btn">Confirm button</button>
             </form>
-            <div class="alternative-sign-in">
-                <p>Or</p>
-                <button type="button" class="Signemail-btn">Sign in with email</button>
-                <a href="#" class="social-link"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="#" class="social-link"><img src="google-icon.png" alt="Google"></a>
-            </div>
+            
         </div>
     </main>
     <?
