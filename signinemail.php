@@ -25,7 +25,7 @@ include './connectDB/user.php';
     <main>
         <div class="container">
             <div class="text">
-                <button type="button" class="back-btn"><img src="back-icon.png" alt="Back"></button>
+                <button type="button" class="back-btn"><img src="back-icon.png" width="100%" alt="Back"></button>
                 <h1>Sign Up</h1>
             </div>
             <div class="text1">
