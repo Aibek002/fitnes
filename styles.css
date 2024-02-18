@@ -26,6 +26,8 @@ body {
     border: none;
     background: none;
     cursor: pointer;
+    width: 6%;
+    height: 6%;
   }
   
   h2 {
