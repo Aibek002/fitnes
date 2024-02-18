@@ -36,6 +36,21 @@ body {
     margin-bottom: 20px;
   }
   
+  .verification-code {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .verification-code input {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
   #country-code {
     width: 100%;
     padding: 10px;
@@ -62,7 +77,7 @@ body {
     margin-top: 20px;
     cursor: pointer;
   }
-  
+
   .Signemail-btn {
     width: 100%;
     padding: 10px;
