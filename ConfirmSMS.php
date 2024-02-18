@@ -34,16 +34,16 @@ include './connectDB/user.php';
             </div>
             <form action="#" method="post">
                 <div class="input-group">
-                  <div class="verification-code">
-        <input type="text" id="digit1" maxlength="1" required>
-        <input type="text" id="digit2" maxlength="1" required>
-        <input type="text" id="digit3" maxlength="1" required>
-        <input type="text" id="digit4" maxlength="1" required>
-      </div>
-                   </div>
+                    <div class="verification-code">
+                        <input type="text" id="digit1" maxlength="1" required>
+                        <input type="text" id="digit2" maxlength="1" required>
+                        <input type="text" id="digit3" maxlength="1" required>
+                        <input type="text" id="digit4" maxlength="1" required>
+                    </div>
+                </div>
                 <button type="submit" class="continue-btn">Confirm button</button>
             </form>
-            
+
         </div>
     </main>
     <?
