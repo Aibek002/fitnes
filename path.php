@@ -1,3 +1,3 @@
 <?
-define('BASE_URL','http://fitnes/');
+define('BASE_URL','/');
 ?>

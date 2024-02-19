@@ -36,7 +36,7 @@ include './connectDB/user.php';
     </div>
       <form action="register.php" method="post">
         <div class="input-group">
-          <input value='<?= $name ?>' na me='name' type="text" id="Name" placeholder="Name" required>
+          <input value='<?= $name ?>' name='name' type="text" id="Name" placeholder="Name" required>
         </div>
         <div class="input-group">
           <input value='<?= $surname ?>' name='surname' type="text" id="Username" placeholder="Surnname" required>

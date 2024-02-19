@@ -27,6 +27,9 @@ include './connectDB/user.php';
             <div class="text">
                 <button type="button" class="back-btn"><img src="back-icon.png" width="100%" alt="Back"></button>
                 <h1>Sign Up</h1>
+                <div class="form-floating">
+                <p for="floatingInput"><?= $errMsgEmpty ?></p>
+            </div>
             </div>
             <div class="text1">
                 <h3>Sign in with Email</h3>
@@ -39,7 +42,7 @@ include './connectDB/user.php';
                 <div class="input-group">
                     <input name='password' type="password" id="Password" placeholder="Password" required>
                 </div>
-                <button name='btn-log' type="submit" class="continue-btn">Continue</button>
+                <button name='button-log' type="submit" class="continue-btn">Continue</button>
             </form>
             
         </div>
