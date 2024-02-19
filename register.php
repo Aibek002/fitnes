@@ -1,54 +1,66 @@
-<?php 
+<?php
 include './connectDB/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
+<style>
+
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="assets/css/register.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+
 <body>
-<?php 
-  include './include/header.php'
+
+  <?
+  include './include/header.php';
   ?>
-<main class="form-signin w-50 m-auto">
-  <form action="register.php" method="post">
-    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
-    <div class="form-floating">
+
+
+  <main>
+    <div class="container">
+      <div class="text">
+        <button type="button" class="back-btn"><img src="back-icon.png" width="100%" alt="Back"></button>
+        <h1>Sign Up</h1>
+      </div>
+      <div class="text1">
+        <h3>Sign up with Email</h3>
+      </div>
+      <div class="form-floating">
       <p for="floatingInput"><?=$errMsgEmpty?></p>
     </div>
-    <div class="form-floating">
-      <input value='<?=$name ?>' name='name' type="text" class="form-control" id="floatingInput" placeholder="Alex">
-      <label for="floatingInput">Name</label>
-    </div>
-    <div class="form-floating">
-      <input value='<?=$surname ?>' name='surname' type="text" class="form-control" id="floatingInput" placeholder="Alexeeva">
-      <label for="floatingInput">SurName</label>
-    </div>
-    <div class="form-floating">
-      <input value='<?php echo $email ?>'  name='email' type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input  name='passwordFir' type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">New Password</label>
-    </div>
-    <div class="form-floating">
-      <input name='passwordSec' type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">re-Password</label>
-    </div>
+      <form action="register.php" method="post">
+        <div class="input-group">
+          <input value='<?= $name ?>' name='name' type="text" id="Name" placeholder="Name" required>
+        </div>
+        <div class="input-group">
+          <input value='<?= $surname ?>' name='surname' type="text" id="Username" placeholder="Surnname" required>
 
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Remember me
-      </label>
+        </div>
+        <div class="input-group">
+          <input value='<?php echo $email ?>' name='email' type="email" id="Email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input name='passwordFir' type="password" id="Password" placeholder="Password" required>
+        </div>
+        <div class="input-group">
+          <input name='passwordSec' type="password" id="Password" placeholder="re-Password" required>
+        </div>
+        <button type="submit" name='button-reg' class="continue-btn">Continue</button>
+      </form>
+
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit" name='button-reg'>Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
-  </form>
-</main>
+  </main>
+  <?
+  include './include/footer.php';
+  ?>
+
+
 </body>
+
 </html>

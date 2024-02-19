@@ -26,31 +26,25 @@ include './connectDB/user.php';
         <div class="container">
             <div class="text">
                 <button type="button" class="back-btn"><img src="back-icon.png" width="100%" alt="Back"></button>
-                <h1>Sign In</h1>
+                <h1>Sign Up</h1>
+                <div class="form-floating">
+                <p for="floatingInput"><?= $errMsgEmpty ?></p>
+            </div>
             </div>
             <div class="text1">
-                <h3>Sign-in with your phone</h3>
-                <p>The activation code will be sent via SMS</p>
+                <h3>Sign in with Email</h3>
             </div>
-            <form action="#" method="post">
+            <form action="signinemail.php" method="post">
+                
                 <div class="input-group">
-                    <select id="country-code">
-                        <option value="+7">+7 (KZ)</option>
-                        <option value="+1">+1 (USA)</option>
-                        <option value="+44">+44 (UK)</option>
-                    </select>
+                    <input name="email" type="email" id="Email" placeholder="Email" required>
                 </div>
                 <div class="input-group">
-                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <input name='password' type="password" id="Password" placeholder="Password" required>
                 </div>
-                <button type="submit" class="continue-btn">Continue</button>
+                <button name='button-log' type="submit" class="continue-btn">Continue</button>
             </form>
-            <div class="alternative-sign-in">
-                <p>Or</p>
-                <button type="button" class="Signemail-btn">Sign in with email</button>
-                <a href="#" class="social-link"><img src="facebook-icon.png" alt="Facebook"></a>
-                <a href="signinemail.php" class="social-link"><img src="google-icon.png" alt="Google"></a>
-            </div>
+            
         </div>
     </main>
     <?

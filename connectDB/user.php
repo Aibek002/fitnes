@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $passSec = trim($_POST['passwordSec']);
 
     if ($email === '' || $name === '' || $passFir === '') {
+        echo $email ." " . $name . " " . $surname . " " . $passFir;
         $errMsgEmpty = "Не все поля заполнены!";
     } elseif (mb_strlen($name, 'UTF-8') < 2) {
         $errMsgEmpty = "Имя должно быть не менее 3 символов";
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
                 // $_SESSION['name'] = $user['name'];
                 // $_SESSION['surname'] = $user['surname'];
                 // $_SESSION['email'] = $user['email'];
-                header('location:' . BASE_URL . 'login.php');
+                header('location:' . BASE_URL . 'signinemail.php');
             } else {
                 echo "Ошибка при регистрации пользователя";
             }
@@ -78,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
     $pass = trim($_POST['password']);
 
     if ($email === '' || $pass === '') {
+
         $errMsgEmpty = "Не все поля заполнены!";
     } else {
         $user = selectOne('data_registration', ['email' => $email]);
@@ -89,7 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['surname'] = $user['surname'];
                 $_SESSION['email'] = $user['email'];
+                // prints($_SESSION['name']);
+
                 header('location:' . BASE_URL);
+
             } else {
                 $errMsgEmpty='логин или пароль не правельный';
             }
