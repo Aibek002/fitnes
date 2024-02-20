@@ -1,149 +1,171 @@
 body {
-  
-    font:Sans Serif Collection;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative; 
-  }
+  font: Sans Serif Collection;
+  margin: 0;
+  padding: 0;
+}
 
-  .text{
-    position: relative;
-    margin-bottom: 20%;
-    text-align: center;
-  }
+.container {
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
 
-  .back-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    width: 10%;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  .input-group {
-    margin-bottom: 20px;
-  }
+.text {
+  position: relative;
+  margin-bottom: 20%;
+  text-align: center;
+}
+.text1 {
+  display: flex;
+  width: 272px;
+  height: 28px;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+.text1 p {
+  color: #515151;
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 18.75px */
+}
+.text1 a {
+  text-decoration: none;
+  color: #6ba0cf;
+}
 
-  .verification-code {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .verification-code input {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #country-code {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  #phone {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
+.back-btn {
+  position: absolute;
+  /* top: 10px; */
+  left: 0px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 10%;
+}
 
-  
-  #Name {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  
-  #Username {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  
-  #Email {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  
-  #Password {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  
-  .continue-btn {
-    width: 100%;
-    padding: 10px;
-    background-color:  #D9D9D9;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 30px ;
-    margin-top: 20px;
-    cursor: pointer;
-  }
+h2 {
+  margin-bottom: 20px;
+}
 
-  .Signemail-btn {
-    width: 100%;
-    padding: 10px;
-    background-color:  #D9D9D9;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    margin-top: 30px;
-  }
-  
-  .alternative-sign-in {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .social-link {
-    display: inline-block;
-    margin-top: 10px;
-  }
-  
-  .social-link img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  .back-btn img{
-    width: 40px;
-  }
+.input-group {
+  margin-bottom: 20px;
+}
+
+.verification-code {
+  display: flex;
+  justify-content: center;
+}
+
+.verification-code input {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#country-code {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#phone {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#Name {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#Username {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#Email {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#Password {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #d9d9d9;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.Signemail-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #d9d9d9;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.alternative-sign-in {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.back-btn img {
+  width: 40px;
+}
+
+.register-logo svg {
+  margin-right: 5px; /* Добавляем небольшое расстояние между SVG и элементом span */
+}
