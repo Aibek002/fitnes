@@ -1,5 +1,5 @@
 <?php
-include './connectDB/user.php';
+include 'app/controllers/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ include './connectDB/user.php';
 <body>
 
     <?
-    include './include/header.php';
+    include 'app/include/header.php';
     ?>
 
 
@@ -34,7 +34,7 @@ include './connectDB/user.php';
             <div class="text1">
                 <h3>Sign in with Email</h3>
             </div>
-            <form action="signinemail.php" method="post">
+            <form action="login.php" method="post">
                 
                 <div class="input-group">
                     <input name="email" type="email" id="Email" placeholder="Email" required>
@@ -48,7 +48,7 @@ include './connectDB/user.php';
         </div>
     </main>
     <?
-    include './include/footer.php';
+    include 'app/include/footer.php';
     ?>
 
 

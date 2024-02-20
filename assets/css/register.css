@@ -14,7 +14,7 @@ body {
 
 .text {
   position: relative;
-  margin-bottom: 20%;
+  margin-bottom:50px;
   text-align: center;
 }
 .text1 {
@@ -40,12 +40,11 @@ body {
 
 .back-btn {
   position: absolute;
-  /* top: 10px; */
+  /* top: 5px; */
   left: 0px;
   border: none;
   background: none;
   cursor: pointer;
-  width: 10%;
 }
 
 h2 {

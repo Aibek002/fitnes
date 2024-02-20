@@ -1,5 +1,5 @@
 <?php
-include './connectDB/user.php';
+include 'app/controllers/user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ include './connectDB/user.php';
 <body>
 
   <?
-  include './include/header.php';
+  include 'app/include/header.php';
   ?>
 
 
@@ -69,7 +69,7 @@ include './connectDB/user.php';
     </div>
   </main>
   <?
-  include './include/footer.php';
+  include 'app/include/footer.php';
   ?>
 
 

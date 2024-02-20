@@ -1,11 +1,12 @@
 <?php
 session_start();
-include('./database/db.php');
-include './path.php';
+include('app\database\connectDB.php');
+include('app\database\db.php');
+include 'path.php';
 
 $isSubmit = false;
 $errMsgEmpty = "";
-$errEmail='';
+$errEmail = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $name = trim($_POST['name']);
     $surname = trim($_POST['surname']);
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $passSec = trim($_POST['passwordSec']);
 
     if ($email === '' || $name === '' || $passFir === '') {
-        echo $email ." " . $name . " " . $surname . " " . $passFir;
+        echo $email . " " . $name . " " . $surname . " " . $passFir;
         $errMsgEmpty = "Не все поля заполнены!";
     } elseif (mb_strlen($name, 'UTF-8') < 2) {
         $errMsgEmpty = "Имя должно быть не менее 3 символов";
@@ -52,28 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $name = '';
     $surname = '';
     $email = '';
-    
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
-    
-// // Проверяем, есть ли уже у нас счетчик в сессии
-// if (!isset($_SESSION['login_attempts'])) {
-//     // Если нет, инициализируем его и устанавливаем значение 0
-//     $_SESSION['login_attempts'] = 0;
-// }
 
-// // Увеличиваем счетчик попыток авторизации
-// $_SESSION['login_attempts']++;
-
-// // Проверяем количество попыток
-// if ($_SESSION['login_attempts'] >= 3) {
-//     // Если количество попыток превысило 3, выполните необходимые действия, например, блокируйте доступ пользователя
-//     echo "Вы превысили лимит попыток авторизации. Пожалуйста, попробуйте позже.";
-//     exit; // Выход из скрипта
-// }
-
-// Здесь выполняется ваш код аутентификации и проверки пароля
+    // Здесь выполняется ваш код аутентификации и проверки пароля
 
     $email = trim($_POST['email']);
     $pass = trim($_POST['password']);
@@ -94,13 +78,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
                 // prints($_SESSION['name']);
 
                 header('location:' . BASE_URL);
-
             } else {
-                $errMsgEmpty='логин или пароль не правельный';
+                $errMsgEmpty = 'логин или пароль не правельный';
             }
         }
     }
-}else{
-    $email='';
-    $pass='';   
+} else {
+    $email = '';
+    $pass = '';
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
+    $feedback_title = trim($_POST['feedback-title']);
+    $feedback_text = trim($_POST['feedback-text']);
+    $phone = trim($_POST['phone']);
+
+    $data_feedback = [
+        'name' => $_SESSION['name'],
+        'feedback_title' => $feedback_title,
+        'feedback' => $feedback_text,
+        'tel_number' => $phone,
+    ];
+    $feed = insert('feedback_users', $data_feedback);
+    if ($feed) {
+        header('location:' . BASE_URL);
+    } else {
+        echo 'error';
+    }
 }
