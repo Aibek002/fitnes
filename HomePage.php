@@ -1,4 +1,4 @@
-<? include './connectDB/user.php';
+<? include 'app/controllers/user.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +12,8 @@
 </head>
 
 <body>
-<? include('./include/header.php'); ?>
-<? include('./include/footer.php'); ?>
+<? include('app/include/header.php'); ?>
+<? include('app/include/footer.php'); ?>
 
 </body>
 

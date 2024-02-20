@@ -1,5 +1,5 @@
  <?php
-    include('./database/connectDB.php');
+    include('app\database\connectDB.php');
 
 
     function prints($value)
