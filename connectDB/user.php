@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
                 // $_SESSION['name'] = $user['name'];
                 // $_SESSION['surname'] = $user['surname'];
                 // $_SESSION['email'] = $user['email'];
-                header('location:' . BASE_URL . 'signinemail.php');
+                header('location:' . BASE_URL . 'login.php');
             } else {
                 echo "Ошибка при регистрации пользователя";
             }
