@@ -43,7 +43,8 @@ include './app/controllers/user.php'
                 </div>
                 <div class="input-group">
                     <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
-                    <textarea name='feedback-text' class="feedback-text" id="feedback-text" placeholder="please write your Feedback here" rows="3" ></textarea>
+                  <div id='editor'></div>
+                    <textarea name='feedback-text' class="feedback-text"  id='editor' placeholder="please write your Feedback here" rows="3" ></textarea>
                 </div>
                 <div class="input-group">
                     <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
@@ -54,6 +55,7 @@ include './app/controllers/user.php'
             
         </div>
     </main>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+    <script src="./assets/js/javascript.js"></script>
 </body>
 </html>
