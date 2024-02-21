@@ -43,8 +43,7 @@ include './app/controllers/user.php'
                 </div>
                 <div class="input-group">
                     <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
-                  <div id='editor'></div>
-                    <textarea name='feedback-text' class="feedback-text"  id='editor' placeholder="please write your Feedback here" rows="3" ></textarea>
+                    <textarea name='feedback-text' class="feedback-text"   placeholder="please write your Feedback here" rows="3" ></textarea>
                 </div>
                 <div class="input-group">
                     <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
