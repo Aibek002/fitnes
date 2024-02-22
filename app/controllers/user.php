@@ -4,9 +4,48 @@ include('app\database\connectDB.php');
 include('app\database\db.php');
 include 'path.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
+
 $isSubmit = false;
 $errMsgEmpty = "";
 $errEmail = '';
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['get-code'])) {
+    $code = rand(1000, 9999);
+    $_SESSION['code'] = $code;
+
+    $name = htmlentities($_POST['name'] . " " . $_POST['surname']);
+    $email = htmlentities($_POST['email']);
+    $_SESSION['emailWithConfirm'] = $email;
+
+    $mail = new PHPMailer(true); // Исправлено здесь, добавлен пробел перед `PHPMailer`
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'aibekseitzhan002@gmail.com';
+    $mail->Password = 'asozyaoflqeljdkf';
+    $mail->Port = 465;
+    $mail->SMTPSecure = 'ssl';
+    $mail->isHTML(true);
+    $mail->setFrom($email, $name); // setFrom, а не setForm
+    $mail->addAddress($_POST['email']); // Адрес, куда будет отправлено сообщение
+    $mail->Subject = "$email subject"; // Здесь вы можете добавить тему письма
+    $mail->Body = "Your code is: $code"; // Здесь вы можете добавить содержимое письма, включая код
+    $mail->send();
+    echo $_POST['email'];
+    // exit();
+    header('location:' . BASE_URL . 'register.php');
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $name = trim($_POST['name']);
     $surname = trim($_POST['surname']);
@@ -36,16 +75,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
                 'password' => $pass,
             ];
             $isSubmit = true;
-            $id = insert('data_registration', $data_register);
-            if ($id) {
-                $user = selectOne('data_registration', ['id_user' => $id]);
-                // $_SESSION['id'] = $user['id_user'];
-                // $_SESSION['name'] = $user['name'];
-                // $_SESSION['surname'] = $user['surname'];
-                // $_SESSION['email'] = $user['email'];
-                header('location:' . BASE_URL . 'login.php');
+
+
+
+
+
+            // Генерируем случайное число от 1000 до 9999
+
+            if ($_SESSION['code'] == $_POST['code']) {
+                if ($_SESSION['emailWithConfirm'] == $email) {
+                    $id = insert('data_registration', $data_register);
+                    if ($id) {
+                        $user = selectOne('data_registration', ['id_user' => $id]);
+                        header('location:' . BASE_URL . 'login.php');
+                    } else {
+                        echo "Ошибка при регистрации пользователя";
+                    }
+                } else {
+                    $errMsgEmpty = 'Email не совподают с Email который был отправлен код!';
+                }
             } else {
-                echo "Ошибка при регистрации пользователя";
+                $errMsgEmpty = 'Код не совподают';
             }
         }
     }

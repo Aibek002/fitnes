@@ -57,6 +57,11 @@ include 'app/controllers/user.php';
         <div class="input-group">
           <input value='<?php echo $email ?>' name='email' type="email" id="Email" placeholder="Email" required>
         </div>
+   
+        <div class="input-group">
+          <input  name='code' type="number" id="code" placeholder="code" required>
+        </div>
+
         <div class="input-group">
           <input name='passwordFir' type="password" id="Password" placeholder="Password" required>
         </div>
