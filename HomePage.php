@@ -26,16 +26,16 @@
         <button class="btn">Let's Go</button>    
     </div>
   </div>
+
+
+
+
+
+
+
+
+
   
-
-
-
-
-
-
-<a href="Notification.php">fff</a>
-
-
 <? include('app/include/footer.php'); ?>
 
 </body>
