@@ -15,9 +15,9 @@ body {
     text-align: center;
   }
   .feedback-text {
-    width: 80%;
+    width: 50%;
     /* padding: 1px; */
-    margin-left: 10%;
+    margin-left: 25%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -26,9 +26,9 @@ body {
   }
   
   #feedback-title {
-    width: 80%;
+    width: 50%;
     /* padding: 1px; */
-    margin-left: 10%;
+    margin-left: 25%;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;

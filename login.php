@@ -25,7 +25,7 @@ include 'app/controllers/user.php';
     <main>
         <div class="container">
             <div class="text">
-                <button type="button" class="back-btn"><img src="back-icon.png" width="100%" alt="Back"></button>
+                <button type="button" class="back-btn"><img src="assets\images\back-icon.png" width="100%" alt="Back"></button>
                 <h1>Sign Up</h1>
                 <div class="form-floating">
                 <p for="floatingInput"><?= $errMsgEmpty ?></p>

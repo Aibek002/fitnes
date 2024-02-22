@@ -37,38 +37,21 @@ include 'app/controllers/user.php';
             </g>
           </svg>
 
-          <span style="display: inline-block; vertical-align: middle;">Register</span>
+          <span style="display: inline-block; vertical-align: middle;">Get code</span>
         </h1>
       </div>
       <div class="text1">
-        <p>Already have an account? <a href="/signinemail.php">Log In</a></p>
       </div>
       <div class="form-floating">
         <p for="floatingInput"><?= $errMsgEmpty ?></p>
       </div>
-      <form action="register.php" method="post">
-        <div class="input-group">
-          <input value='<?= $name ?>' name='name' type="text" id="Name" placeholder="Name" required>
-        </div>
-        <div class="input-group">
-          <input value='<?= $surname ?>' name='surname' type="text" id="Username" placeholder="Surnname" required>
-
-        </div>
+      <form action="email.php" method="post">
+        
+       
         <div class="input-group">
           <input value='<?php echo $email ?>' name='email' type="email" id="Email" placeholder="Email" required>
         </div>
-   
-        <div class="input-group">
-          <input  name='code' type="number" id="code" placeholder="code" required>
-        </div>
-
-        <div class="input-group">
-          <input name='passwordFir' type="password" id="Password" placeholder="Password" required>
-        </div>
-        <div class="input-group">
-          <input name='passwordSec' type="password" id="Password" placeholder="re-Password" required>
-        </div>
-        <button type="submit" name='button-reg' class="continue-btn">Continue</button>
+        <button type="submit" name='get-code' class="continue-btn">Get Code</button>
       </form>
 
     </div>
