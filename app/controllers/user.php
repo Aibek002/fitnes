@@ -6,10 +6,10 @@ include 'path.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMailer.php';
-require './PHPMailer/src/SMTP.php';
+// Ваш код для отправки почты с использованием PHPMailer
+
 
 $isSubmit = false;
 $errMsgEmpty = "";
