@@ -12,7 +12,7 @@ include 'app/controllers/user.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="assets/css/register.css" rel="stylesheet">
-  <title>Document</title>
+  <title>Re-Password</title>
 </head>
 
 <body>
@@ -37,38 +37,24 @@ include 'app/controllers/user.php';
             </g>
           </svg>
 
-          <span style="display: inline-block; vertical-align: middle;">Register</span>
+          <span style="display: inline-block; vertical-align: middle;">Re-Password</span>
         </h1>
       </div>
       <div class="text1">
-        <p>Already have an account? <a href="/login.php">Log In</a></p>
       </div>
       <div class="form-floating">
         <p for="floatingInput"><?= $errMsgEmpty ?></p>
       </div>
-      <form action="register.php" method="post">
+      <form action="email.php" method="post">
+        
+       
         <div class="input-group">
-          <input value='<?= $name ?>' name='name' type="text" id="Name" placeholder="Name" required>
+        <input  name='passw' type="password" id="password" placeholder="new password" required>
         </div>
         <div class="input-group">
-          <input value='<?= $surname ?>' name='surname' type="text" id="Username" placeholder="Surnname" required>
-
+        <input name='re-passw' type="password" id="password" placeholder="re-password" required>
         </div>
-        <div class="input-group">
-          <input value='<?php echo $email ?>' name='email' type="email" id="Email" placeholder="Email" required>
-        </div>
-   
-        <div class="input-group">
-          <input  name='code' type="number" id="code" placeholder="code" required>
-        </div>
-
-        <div class="input-group">
-          <input name='passwordFir' type="password" id="Password" placeholder="Password" required>
-        </div>
-        <div class="input-group">
-          <input name='passwordSec' type="password" id="Password" placeholder="re-Password" required>
-        </div>
-        <button type="submit" name='button-reg' class="continue-btn">Continue</button>
+        <button type="submit" name='re-password' class="continue-btn">Submit</button>
       </form>
 
     </div>
