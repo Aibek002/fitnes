@@ -34,7 +34,6 @@
 
 
 
-
   
 <? include('app/include/footer.php'); ?>
 
