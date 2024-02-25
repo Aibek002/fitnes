@@ -51,11 +51,12 @@ include 'app/controllers/user.php';
                 <div class="input-group">
                     <input name='password' type="password" id="Password" placeholder="Password" required>
                 </div>
-                <button name='button-log' type="submit" class="continue-btn">Continue</button>
+                <button name='button-re-passwd' type="submit" class="continue-btn">Continue</button>
 
                 <div class="text1">
                     <hr style="width: 200px; background-color:aqua; height:2px">
-                    <p>if you forgot your <a href="/re-password.php"> Password </a></p>
+
+                    <p>if you forgot your <a   href="/get-code-for-re-passwd.php">Password </a></p>
                 </div>
             </form>
 
