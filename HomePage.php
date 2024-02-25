@@ -20,13 +20,14 @@
     <img src="assets/images/Objects.png" alt="Overlay Image" class="overlay-image">
     <div class="text-container">
         <div class="text-t-container">
+            
         <h1> Welcome To FitMe </h1>
         <p> The world is full of amazing things to discover </p>
         
         </div>
         <button class="btn">Let's Go</button>    
     </div>
-  </div>
+</div>
 
 
 <? include('app/include/footer.php'); ?>
