@@ -201,13 +201,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
-    $feedback_title = trim($_POST['feedback-title']);
-    $feedback_text = trim($_POST['feedback-text']);
+    $email = trim($_POST['email']);
+    $feedback_text = trim($_POST['msg']);
     $phone = trim($_POST['phone']);
 
     $data_feedback = [
-        'name' => $_SESSION['name'],
-        'feedback_title' => $feedback_title,
+        'name' => $_POST['name'],
+        'surname' => $_POST['surname'],
+        'email' => $email,
         'feedback' => $feedback_text,
         'tel_number' => $phone,
     ];
