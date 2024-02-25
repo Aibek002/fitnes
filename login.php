@@ -61,6 +61,7 @@ include 'app/controllers/user.php';
 </div>
                     
                 </div>
+<<<<<<< HEAD
                 <script src="assets\js\check.js"></script>
                 <div class="password">
                 <input type="checkbox" id="checkButton">
@@ -68,6 +69,9 @@ include 'app/controllers/user.php';
                 <a href="/re-password.php" class="parallelText">Forgot Password ?</a>
                 </div>
                 
+=======
+                <button name='button-re-passwd' type="submit" class="continue-btn">Continue</button>
+>>>>>>> 2aa7ed3a5869b2258f1d226bb4ff72870940e343
 
 
 
@@ -77,8 +81,14 @@ include 'app/controllers/user.php';
 
               <!--  <div class="text1">
                     <hr style="width: 200px; background-color:aqua; height:2px">
+<<<<<<< HEAD
                     <p>if you forgot your <a href="/re-password.php"> Password </a></p>
                 </div> -->
+=======
+
+                    <p>if you forgot your <a   href="/get-code-for-re-passwd.php">Password </a></p>
+                </div>
+>>>>>>> 2aa7ed3a5869b2258f1d226bb4ff72870940e343
             </form>
 
             <div class="or-text">Or</div>
