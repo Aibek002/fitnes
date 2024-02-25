@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10%;
+    margin-bottom: 50%;
   }
 
   .text-t-container {
@@ -43,14 +43,14 @@
     width: 40%;
     color: #000000;
     font-family: 'Lato';
-    font-size: 300%;
+    font-size: 200%;
 }
 
 p {
     width: 70%;
     color: #000000;
     font-family: 'Lato';
-    font-size: 200%;
+    font-size: 100%;
 }
 
 
