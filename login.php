@@ -9,9 +9,10 @@ include 'app/controllers/user.php';
 
 <head>
     <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
     <title>login</title>
 </head>
 
@@ -25,7 +26,7 @@ include 'app/controllers/user.php';
     <main>
         <div class="container">
             <div class="text">
-                <button type="button" class="back-btn"><img src="assets\images\back-icon.png" width="100%" alt="Back"></button>
+                <button type="button" class="back-btn"><img src="assets\images\vector.png"></button>
 
                 <h1> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
                         <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
@@ -35,30 +36,56 @@ include 'app/controllers/user.php';
                             <rect width="25.0799" height="10" transform="matrix(0.91707 -0.398726 0 1 0 0)" fill="#1D3EB3" />
                             <rect width="25.0799" height="25.0799" transform="matrix(0.91707 0.398726 -0.91707 0.398726 11.8477 4.54492)" fill="#FAC02B" />
                         </g>
-                    </svg> <span style="display: inline-block; vertical-align: middle;">Login</span></h1>
+                    </svg> <span style="display: inline-block; vertical-align: middle;">Log In</span></h1>
+
+                    <div class="text1">
+                        <p>Don't have an account? <a href="/register.php">Register </a></p>
+                    </div>
+
+
                 <div class="form-floating">
                     <p for="floatingInput"><?= $errMsgEmpty ?></p>
                 </div>
             </div>
-            <div class="text1">
-                <h3>Sign in with Email</h3>
-            </div>
+            
             <form action="login.php" method="post">
 
                 <div class="input-group">
-                    <input name="email" type="email" id="Email" placeholder="Email" required>
+                    <p>Email or username</p>
+                    <input name="email" type="email" id="Email"required>
                 </div>
                 <div class="input-group">
-                    <input name='password' type="password" id="Password" placeholder="Password" required>
+                    <p>Password </p>
+                    <div class="password-container">
+  <input type="password" id="password" class="password-input" placeholder="Enter your password">
+</div>
+                    
                 </div>
-                <button name='button-log' type="submit" class="continue-btn">Continue</button>
+                <script src="assets\js\check.js"></script>
+                <div class="password">
+                <input type="checkbox" id="checkButton">
+                <label for="checkButton">Remember Me </label>
+                <a href="/re-password.php" class="parallelText">Forgot Password ?</a>
+                </div>
+                
 
-                <div class="text1">
+
+
+
+
+                <button name='button-log' type="submit" class="continue-btn"><img src="assets\images\union-1.png">Continue</button>
+
+              <!--  <div class="text1">
                     <hr style="width: 200px; background-color:aqua; height:2px">
                     <p>if you forgot your <a href="/re-password.php"> Password </a></p>
-                </div>
+                </div> -->
             </form>
 
+            <div class="or-text">Or</div>
+        <div class="social-icons">
+            <img src="assets\images\facebook.png" alt="Facebook" class="social-icon">
+            <img src="assets\images\google.png" alt="Google" class="social-icon">
+        </div>
         </div>
     </main>
     <?
