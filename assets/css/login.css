@@ -18,30 +18,6 @@ body {
     text-align: center;
   }
 
-
-  .text1 {
-    display: flex;
-    width: 100%;
-    height: 28px;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
-    flex-shrink: 0;
-    margin-top: 2%;
-  }
-  .text1 p {
-    color: #515151;
-    font-family: Lato;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 18.75px */
-  }
-  .text1 a {
-    text-decoration: none;
-    color: #6ba0cf;
-  }
-  
   .back-btn {
     position: absolute;
     /* top: 5px; */
@@ -52,7 +28,7 @@ body {
     overflow: hidden; /* Clips the rectangular image to fit within the circle */
     width: 40px;
     height: 40px;
-    background-color: #30F2F2;
+    background-color: #1F64FF;
     
   }
 
@@ -63,71 +39,42 @@ body {
         transform: translate(-50%, -50%);
         max-width: 100%;
         max-height: 100%;
-}
-
-  
-  h2 {
-    margin-bottom: 20px;
-    font-family: 'Lato Bold' ;
-    font-weight: bold;
   }
-  
+
+  .text1 {
+    display: flex;
+    width: 100%;
+    height: 28px;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 2%;
+    font-size: 15px;
+  }
+
+  .text1 p {
+    color: #000000;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  .text1 a {
+    text-decoration: none;
+    color: #1F64FF;
+  }
+
   .input-group {
     margin-bottom: 16px;
     padding-top: 2px;
   }
+  
   p {
     margin-bottom:1px;
+    font-size: 14px;
   }
-  
-  .verification-code {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .verification-code input {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #country-code {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  #phone {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #D8DADC;
-    border-radius: 5px;
-  }
-  
-  #Name {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #D8DADC;
-    border-radius: 5px;
-  }
-  
-  #Username {
-    width: 100%;
-    padding: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #D8DADC;
-    border-radius: 5px;
-  }
-  
+
   #Email {
     width: 100%;
     padding: 1px;
@@ -146,15 +93,84 @@ body {
     border-radius: 5px;
   }
 
+  .password-container {
+    position: relative;
+    width: 300px;
+    margin: 1px auto;
+  }
+  .password-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-image: url('show.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+  }
 
+  .password {
+    display: flex;
+    align-items: center;
+
+  }
+
+  #checkButton {
+    margin-right: 10px;
+  }
+
+  .password-container {
+    position: relative;
+    width: 300px;
+    margin: 1px auto;
+  }
+  .password-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Adjusted padding to accommodate the image */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-image: url('show.png'); /* Image URL */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positioning the image */
+  }
+
+  #checkButton {
+    margin-right: 10px;
+  }
+  #checkButton:checked {
+    background-color: #30F2F2; /* Change color when checked */
+  }
+  #checkButton {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ccc;
+    font-size: 14px;
+  }
+  .checked {
+    background-color: #30F2F2; /* Change color when checked */
+  }
+  
+  .parallelText {
+    margin-left: 40px;
+  }
+
+a {
+    color: #000000;
+}
   
   .continue-btn {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     background-color: #1F64FF;
     color: #FFFFFF;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 23px;
     margin: 0 auto;
     margin-bottom: 30px;
     margin-top: 20px;
@@ -170,6 +186,8 @@ body {
     height: 20px;
   }
   
+
+/*
   .Signemail-btn {
     width: 100%;
     padding: 10px;
@@ -208,55 +226,9 @@ body {
   }
   
   .register-logo svg {
-    margin-right: 5px; /* Добавляем небольшое расстояние между SVG и элементом span */
-  }
-  .password {
-    display: flex;
-    align-items: center;
-
+    margin-right: 5px; 
   }
 
-  .password-container {
-    position: relative;
-    width: 300px;
-    margin: 1px auto;
-  }
-  .password-input {
-    width: 100%;
-    padding: 10px 40px 10px 10px; /* Adjusted padding to accommodate the image */
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-image: url('show.png'); /* Image URL */
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* Positioning the image */
-  }
-
-  #checkButton {
-    margin-right: 10px;
-  }
-  #checkButton:checked {
-    background-color: #30F2F2; /* Change color when checked */
-  }
-  #checkButton {
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #ccc;
-  }
-  .checked {
-    background-color: #30F2F2; /* Change color when checked */
-  }
-  
-  .parallelText {
-    margin-left: 40px;
-  }
-
-a {
-    color: #30F2F2;
-}
   .or-text {
     margin-bottom: 20px;
     text-align: center;
@@ -271,3 +243,4 @@ a {
     margin: 0 40px;
     cursor: pointer;
 }
+*/

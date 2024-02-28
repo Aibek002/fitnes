@@ -9,9 +9,10 @@ include 'app/controllers/user.php';
 
 <head>
   <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link href="assets/css/register.css" rel="stylesheet">
+  <link href="assets/css/re-password.css" rel="stylesheet">
   <title>Re-Password</title>
 </head>
 
@@ -25,7 +26,7 @@ include 'app/controllers/user.php';
   <main>
     <div class="container">
       <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back-icon.png" alt="Back"></button>
+        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
         <h1 class="register-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
             <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
@@ -37,7 +38,7 @@ include 'app/controllers/user.php';
             </g>
           </svg>
 
-          <span style="display: inline-block; vertical-align: middle;">Re-Password</span>
+          <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Re-Password</span>
         </h1>
       </div>
       <div class="text1">

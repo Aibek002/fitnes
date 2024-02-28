@@ -39,20 +39,24 @@ include 'app/controllers/user.php';
           </svg>
 -->
 
-          <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Forgot password?</span>
+          <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Sign In</span>
         </h1>
       </div>
       <div class="text1">
-        <p class="p1">Enter your email</p>
-        <p class="p2">The activation code will be sent via Email</p>
+        <p class="p1">Enter code from Email</p>
+        <p class="p2">Enter sent code to your email example@.com</p>
       </div>
       <div class="form-floating">
         <p for="floatingInput"><?= $errMsgEmpty ?></p>
       </div>
-      <form action="get-code-for-re-passwd.php" method="post">
-        <div class="input-group">
-          <input value='<?php echo $email ?>' name='email' type="email" id="Email"  required>
-        </div>
+
+      
+            <div id="codeInput">
+                <input type="text" maxlength="1" id="digit1" oninput="focusNext(this)">
+                <input type="text" maxlength="1" id="digit2" oninput="focusNext(this)">
+                <input type="text" maxlength="1" id="digit3" oninput="focusNext(this)">
+                <input type="text" maxlength="1" id="digit4" oninput="submitCode()">
+            </div>
         <button type="submit" name='re-password-code' class="continue-btn">Get Code</button>
       </form>
 
@@ -62,7 +66,28 @@ include 'app/controllers/user.php';
   include 'app/include/footer.php';
   ?>
 
+<script>
+  function focusNext(current) {
+    if (current.value.length === current.maxLength) {
+      var next = current.nextElementSibling;
+      if (next == null) return;
+      next.focus();
+    }
+  }
+
+  function submitCode() {
+    var code = document.getElementById("digit1").value +
+               document.getElementById("digit2").value +
+               document.getElementById("digit3").value +
+               document.getElementById("digit4").value;
+    console.log("Entered code:", code);
+    if (code === "1234") {
+      window.location.href = "success.html";
+    } else {
+      alert("Invalid code. Please try again.");
+    }
+  }
+</script>
 
 </body>
-
 </html>
