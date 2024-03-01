@@ -1,0 +1,63 @@
+.image-container {
+    position: relative;
+    padding-top: 7% ;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+
+  .background-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay-image {
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    height: auto;
+    left: 0;
+    z-index: 2;
+  }
+
+  .text-t-container {
+    position: absolute;
+    left: 50%;
+    top: 76%;
+    transform: translateX(-50%);
+    color: #000000;
+    font-family: 'Lato';
+    text-align: center;
+    width: 100%;
+  }
+
+h1 {
+    width: 50%;
+    left: 50%;
+    transform: translateX(50%);
+    color: #000000;
+    font-family: 'Lato';
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    width: 100%;
+    color: #000000;
+    font-family: 'Lato';
+    font-size: 18px;
+}
+
+.btn{
+  position: absolute;
+  right: 5%;
+  bottom: -10%;
+  background-color: #1F64FF;
+  font-family: 'Lato';
+  color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 30%;
+}

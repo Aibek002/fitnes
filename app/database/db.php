@@ -1,6 +1,12 @@
  <?php
     include('app\database\connectDB.php');
 
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // use PHPMailer\PHPMailer\Exception;
+
+    // require './PHPMailer/src/Exception.php';
+    // require './PHPMailer/src/PHPMailer.php';
+    // require './PHPMailer/src/SMTP.php';
 
     function prints($value)
     {
@@ -138,15 +144,25 @@
         $query->execute();
         dbCheckError($query);
     }
-    // $arrData = [
-    //     'name' => 'Aibek',
-    //     'surname' => 'Aibek',
-    //     'kg' => '88',
-    // ];
-    // delete('fitnes', 4);
-    // update('fitnes', 2 ,$arrData);
-    // insert('fitnes',$arrData);
-    // prints(selectAll('data_registration'))
-
+    // function getCode($code , $name ,  $email)
+    // {
+    //     $mail = new PHPMailer(true); // Исправлено здесь, добавлен пробел перед `PHPMailer`
+    //     $mail->SMTPDebug = 2;
+    //     $mail->isSMTP();
+    //     $mail->Host = 'smtp.gmail.com';
+    //     $mail->SMTPAuth = true;
+    //     $mail->Username = 'aibekseitzhan002@gmail.com';
+    //     $mail->Password = 'asozyaoflqeljdkf';
+    //     $mail->Port = 465;
+    //     $mail->SMTPSecure = 'ssl';
+    //     $mail->isHTML(true);
+    //     $mail->setFrom($email, $name); // setFrom, а не setForm
+    //     $mail->addAddress($_POST['email']); // Адрес, куда будет отправлено сообщение
+    //     $mail->Subject = "$email subject"; // Здесь вы можете добавить тему письма
+    //     $mail->Body = "Your code is: $code"; // Здесь вы можете добавить содержимое письма, включая код
+    //     echo 'send';
+    //     $mail->send();
+    //     echo $_POST['email'];
+    // }
 
     ?>

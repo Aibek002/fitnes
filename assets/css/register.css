@@ -1,12 +1,12 @@
 body {
-  font: Sans Serif Collection;
+  font-family: 'Lato';
   margin: 0;
   padding: 0;
 }
 
 .container {
   max-width: 80%;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 5px;
   position: relative;
@@ -14,19 +14,47 @@ body {
 
 .text {
   position: relative;
-  margin-bottom:50px;
+  margin-bottom:16px;
   text-align: center;
 }
+
+.back-btn {
+  position: absolute;
+  /* top: 5px; */
+  left: 0px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; /* Makes the button circular */
+  overflow: hidden; /* Clips the rectangular image to fit within the circle */
+  width: 40px;
+  height: 40px;
+  background-color: #1F64FF;
+  
+}
+
+.back-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .text1 {
   display: flex;
-  width: 272px;
+  width: 100%;
   height: 28px;
   flex-direction: column;
   justify-content: flex-end;
+  text-align: center;
   flex-shrink: 0;
+  margin-top: 2%;
+  font-size: 15px;
 }
+
 .text1 p {
-  color: #515151;
+  color: #000000;
   font-family: Lato;
   font-size: 15px;
   font-style: normal;
@@ -35,26 +63,96 @@ body {
 }
 .text1 a {
   text-decoration: none;
-  color: #6ba0cf;
-}
-
-.back-btn {
-  position: absolute;
-  /* top: 5px; */
-  left: 0px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-h2 {
-  margin-bottom: 20px;
+  color: #1F64FF;
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  padding-top: 2px;
 }
 
+p {
+  margin-bottom:4px;
+  font-size: 14px;
+}
+
+#Name {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #D8DADC;
+  border-radius: 5px;
+}
+
+#Username {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #D8DADC;
+  border-radius: 5px;
+}
+
+#Email {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #D8DADC;
+  border-radius: 5px;
+}
+
+#Password {
+  width: 100%;
+  padding: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #D8DADC;
+  border-radius: 5px;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #1F64FF;
+  color: #FFFFFF;
+  border: none;
+  font-size: 23px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  justify-content: center;
+  display: inline-flex;
+    align-items: center;
+}
+
+.continue-btn img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+  
 .verification-code {
   display: flex;
   justify-content: center;
@@ -70,7 +168,7 @@ h2 {
   border-radius: 5px;
 }
 
-#country-code {
+  #country-code {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -81,59 +179,11 @@ h2 {
   padding: 1px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid #D8DADC;
   border-radius: 5px;
-}
+}  
 
-#Name {
-  width: 100%;
-  padding: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-#Username {
-  width: 100%;
-  padding: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-#Email {
-  width: 100%;
-  padding: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-#Password {
-  width: 100%;
-  padding: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-.continue-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #d9d9d9;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-.Signemail-btn {
+  .Signemail-btn {
   width: 100%;
   padding: 10px;
   background-color: #d9d9d9;
@@ -146,7 +196,8 @@ h2 {
 }
 
 .alternative-sign-in {
-  margin-top: 20px;
+  margin-top: 20px auto;
+  width: 60%;
   text-align: center;
 }
 
@@ -160,11 +211,30 @@ h2 {
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-}
-.back-btn img {
-  width: 40px;
+}  
+
+.button{
+  align-items: center;
+  width: 80%;
+  margin:  auto;
 }
 
 .register-logo svg {
-  margin-right: 5px; /* Добавляем небольшое расстояние между SVG и элементом span */
+  margin-right: 5px;
 }
+.or-text {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 23px;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+.social-icon {
+  width: 50px;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+*/

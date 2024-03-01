@@ -1,0 +1,189 @@
+body {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  .text {
+    position: relative;
+    margin-bottom:16px;
+    text-align: center;
+  }
+
+  .back-btn {
+    position: absolute;
+    left: 0px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; 
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    background-color: #1F64FF;
+    
+  }
+  
+  .back-btn img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+    .calculator {
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: left;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    button {
+    width: 100%;
+      padding: 10px 20px;
+      background-color: #1F64FF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    button:hover {
+      background-color: #1F64FF;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .info {
+        margin-bottom: 20px;
+
+    }
+
+    .goal-selector {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      
+    
+    }
+
+    .goal-option-3 {
+      width: 34%;
+      cursor: pointer;
+      
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+    }
+
+    .goal-option-2 {
+      width: 50%;
+      cursor: pointer;
+      
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+
+    }
+
+    .goal-option {
+      width: 100%;
+      cursor: pointer;
+      border: 1px solid #000000;
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+    }
+
+    #goal {
+        width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+      border-radius: 5px;
+
+    }
+
+    .selected {
+      background-color: #1BA3F0;
+      color: #fff;
+    }
+
+    #goal-selected {
+    display: none;
+  }
+
+  #lose{
+    display: none;
+  }
+  #gain{
+    display: none;
+  }
+  #diet-plan{
+    display: none;
+  }
+
+  .continue-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1F64FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    justify-content: center;
+    display: inline-flex;
+      align-items: center;
+    font-size: 23px;
+  }
+  
+  .continue-btn img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+ 
+
+  .input-with-suffix {
+    position: relative;
+    display: inline-block;
+  }
+
+  .input-with-suffix input {
+    padding-right: 30px; /* Adjust as needed */
+  }
+
+  .input-with-suffix span {
+    position: absolute;
+    right: 8px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #333; /* Adjust color as needed */
+  }
