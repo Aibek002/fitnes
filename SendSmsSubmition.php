@@ -25,7 +25,7 @@ include 'app/controllers/user.php';
   <main>
     <div class="container">
       <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back-icon.png" alt="Back"></button>
+        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
         <h1 class="register-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
             <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
@@ -45,7 +45,7 @@ include 'app/controllers/user.php';
       <div class="form-floating">
         <p for="floatingInput"><?= $errMsgEmpty ?></p>
       </div>
-      <form action="email.php" method="post">
+      <form action="SendSmsSubmition.php" method="post">
         
        
         <div class="input-group">

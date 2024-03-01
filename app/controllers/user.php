@@ -18,63 +18,42 @@ $errMsgEmpty = "";
 $errEmail = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password'])) {
-    echo 'correct';
     // Проверяем, совпадает ли введенный код с кодом из сессии
-    if ($_POST['code'] == $_SESSION['code-passw']) {
-        echo 'correct not';
 
-        // Создаем массив параметров для передачи в функцию update
-        $params = [
-            'password' => $_POST['passw'] // Новый пароль
-        ];
-        $email = $_SESSION['emailWithConfirm'];
-        // Получаем id пользователя по email из сессии
-        $sql = "SELECT id_user FROM data_registration WHERE email = ' $email '";
-        $query = $connection->prepare($sql);
-        $query->execute();
-        dbCheckError($query);
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        $id = $row['id_user'];
-        // echo $id . ".1 " . $sql;
-        
-        // Вызываем функцию update для обновления пароля
-        update('data_registration', $id, $params);
 
-        // Добавляем код для редиректа пользователя
-        header('Location: ' . BASE_URL . 'login.php');
-        exit(); // Обязательно завершаем выполнение скрипта после редиректа
-    } else {
-        echo 'not correct';
-    }
+    // Создаем массив параметров для передачи в функцию update
+    $params = [
+        'password' => $_POST['passw'] // Новый пароль
+    ];
+    $email = $_SESSION['emailWithConfirm'];
+    // Получаем id пользователя по email из сессии
+    $sql = "SELECT id_user FROM data_registration WHERE email = ' $email '";
+    $query = $connection->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $id = $row['id_user'];
+    // echo $id . ".1 " . $sql;
+
+    // Вызываем функцию update для обновления пароля
+    update('data_registration', $id, $params);
+
+    // Добавляем код для редиректа пользователя
+    header('Location: ' . BASE_URL . 'login.php');
+    exit(); // Обязательно завершаем выполнение скрипта после редиректа
+
 }
 
 
 
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password-code'])) {
-    $code = rand(1000, 9999);
-    $name = htmlentities($_POST['name'] . " " . $_POST['surname']);
-    $email = htmlentities($_POST['email']);
-    $_SESSION['code-passw'] = $code;
-    $_SESSION['emailWithConfirm'] = $email;
-    $mail = new PHPMailer(true); // Исправлено здесь, добавлен пробел перед `PHPMailer`
-    $mail->SMTPDebug = 2;
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'aibekseitzhan002@gmail.com';
-    $mail->Password = 'asozyaoflqeljdkf';
-    $mail->Port = 465;
-    $mail->SMTPSecure = 'ssl';
-    $mail->isHTML(true);
-    $mail->setFrom($email, $name); // setFrom, а не setForm
-    $mail->addAddress($_POST['email']); // Адрес, куда будет отправлено сообщение
-    $mail->Subject = "$email subject"; // Здесь вы можете добавить тему письма
-    $mail->Body = "Your code is: $code"; // Здесь вы можете добавить содержимое письма, включая код
-    echo 'send';
-    $mail->send();
-    echo $_POST['email'];
-    header('location:' . BASE_URL . 're-password.php');
+// для проверки кода при изменении пароля
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enter-code'])) {
+    $code = $_POST['firstnumber'] . " " . $_POST['secondnumber'] . " " . $_POST['thirdnumber'] . " " . $_POST['fourthnumber'];
+    if ($_SESSION['code-passw'] === $code) {
+        header('location:' . BASE_URL . 're-password.php');
+    } else {
+        $errMsgEmpty = "Code Not Correct";
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['get-code'])) {
@@ -102,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['get-code'])) {
     $mail->send();
     echo $_POST['email'];
 
-    header('location:' . BASE_URL . 'register.php');
+    header('location:' . BASE_URL . 'enter-code.php');
 }
 
 
