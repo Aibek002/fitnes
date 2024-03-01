@@ -53,7 +53,7 @@ include 'app/controllers/user.php';
         <div class="input-group">
           <input value='<?php echo $email ?>' name='email' type="email" id="Email"  required>
         </div>
-        <button type="submit" name='re-password-code' class="continue-btn">Get Code</button>
+        <button type="submit" name='get-code' class="continue-btn">Get Code</button>
       </form>
 
     </div>

@@ -48,8 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password'])) {
 
 // для проверки кода при изменении пароля
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enter-code'])) {
-    $code = $_POST['firstnumber'] . " " . $_POST['secondnumber'] . " " . $_POST['thirdnumber'] . " " . $_POST['fourthnumber'];
-    if ($_SESSION['code-passw'] === $code) {
+    $code = $_POST['firstnumber'] . "" . $_POST['secondnumber'] . "" . $_POST['thirdnumber'] . "" . $_POST['fourthnumber'];
+    echo  $code . " / " . $_SESSION['code'] ;
+    if ($_SESSION['code'] == $code) {
+
         header('location:' . BASE_URL . 're-password.php');
     } else {
         $errMsgEmpty = "Code Not Correct";
@@ -58,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enter-code'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['get-code'])) {
     $code = rand(1000, 9999);
-    $name = htmlentities($_POST['name'] . " " . $_POST['surname']);
+    $name = htmlentities("Aibeksss");
     $email = htmlentities($_POST['email']);
     $_SESSION['code'] = $code;
     $_SESSION['emailWithConfirm'] = $email;
