@@ -24,7 +24,7 @@
       </div>
 
     <div class="info">
-        <p id="diet-plan"> Current diet type </p>
+        <p id="diet-plan"> Current diet type: mediterranean</p>
     </div>
 
     <div class="info">
@@ -126,7 +126,7 @@
     
     
 
-    <button  type="submit" class="continue-btn"><img src="assets\images\calculate.png">Calculate</button>
+    <button name="nutrition-calculator"  type="submit" class="continue-btn"><img src="assets\images\calculate.png">Calculate</button>
   </div>
   <div id="lose">kkkkk</div>
 

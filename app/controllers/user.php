@@ -16,6 +16,10 @@ require './PHPMailer/src/SMTP.php';
 $isSubmit = false;
 $errMsgEmpty = "";
 $errEmail = '';
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition-calculator'])){
+    
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password'])) {
     // Проверяем, совпадает ли введенный код с кодом из сессии
@@ -178,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
 
     $data_feedback = [
         'name' => $_POST['name'],
-        'surname' => $_POST['surname'],
+        'feedbackTitle' => $_POST['feedback-title'],
         'email' => $email,
         'feedback' => $feedback_text,
         'tel_number' => $phone,

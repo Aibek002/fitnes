@@ -39,18 +39,37 @@ include './app/controllers/user.php'
         </div>
 
         <form action="feedback.php" method="post">
+        <div class="div-input">
+        <label  class="label" for="goalWeight">Name</label>
 
-            <div class="input-group">
+                <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
+                <input name="name" type="text" id="feedback-title" placeholder="Name  " required>
+            </div>
+        <div class="div-input">
+        <label  class="label" for="goalWeight">Email</label>
+
+                <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
+                <input name="email" type="email" id="feedback-title" placeholder="Email address  " required>
+            </div>
+
+            <div class="div-input">
+            <label class="label" for="goalWeight">Phone Number</label>
+                <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
+                <input name="phone" type="text" id="feedback-title" placeholder="(123) 456-7890" required>
+            </div>
+            <div class="div-input">
+            <label  class="label" for="goalWeight">Feedback title</label>
+
                 <input name="feedback-title" type="text" id="feedback-title" placeholder="feedback-title" required>
             </div>
-            <div class="input-group">
+
+            <div class="div-input">
+            <label  class="label" for="goalWeight">Additional feedback</label>
+
                 <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
-                <textarea name='feedback-text' class="feedback-text" placeholder="please write your Feedback here" rows="3"></textarea>
+                <textarea name='msg' class="feedback-text" placeholder="If you have any additional feedback, please type it in here..." rows="3"></textarea>
             </div>
-            <div class="input-group">
-                <!-- <input name='feedback-text' type="text" id="feedback-text" placeholder="feedback" required> -->
-                <input name="phone" type="text" id="feedback-title" placeholder="phone number" required>
-            </div>
+            
             <button name='button-feedback' type="submit" class="continue-btn">Continue</button>
         </form>
 

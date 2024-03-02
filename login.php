@@ -54,7 +54,7 @@ include 'app/controllers/user.php';
                 <div class="input-group">
                     <p>Password </p>
                     <div class="password-container">
-                        <input type="password" id="password" class="password-input" placeholder="Enter your password">
+                        <input name='password' type="password" id="password" class="password-input" placeholder="Enter your password">
                     </div>
                 </div>
 

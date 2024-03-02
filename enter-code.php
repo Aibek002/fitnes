@@ -19,7 +19,7 @@ include 'app/controllers/user.php';
 <body>
 
   
-<button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
+<button type="button" class="back-btn" onclick='goBack()'><img src="assets\images\back.png"  class ="Back"></button>
 
 
   <main>
