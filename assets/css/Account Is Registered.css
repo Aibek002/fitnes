@@ -3,9 +3,10 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('background.jpg'); 
-    background-color: #f4f4f4;
-    overflow: hidden;
+    background-image: url('../images/image.png'); 
+    background-color: #000000ee;
+    background-size: cover;
+    /* overflow: hidden; */
 }
 .overlay {
     position: fixed;
@@ -13,7 +14,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.867); 
     z-index: 10;
 }
 
@@ -23,7 +24,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 327px;
-    margin: 100px auto;
+    /* margin: 100px auto; */
     background-image: linear-gradient(to right, #062AC8, #1F64FF);
     padding: 20px;
     border-radius: 10px;

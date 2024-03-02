@@ -13,7 +13,7 @@
   
   .overlay-image {
     position: absolute;
-    top: 33%;
+    top: 40%;
     width: 100%;
     height: auto;
     left: 0;
@@ -42,10 +42,11 @@ h1 {
 }
 
 p {
-    width: 100%;
-    color: #000000;
-    font-family: 'Lato';
-    font-size: 18px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 132%;
+  color: #000;
 }
 
 .btn{

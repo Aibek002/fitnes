@@ -15,7 +15,8 @@ body {
 
   .back-btn {
     position: absolute;
-    left: 0px;
+    top: 40px;
+    left: 30px;
     border: none;
     cursor: pointer;
     border-radius: 50%; 

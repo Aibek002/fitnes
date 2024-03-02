@@ -18,15 +18,14 @@ include 'app/controllers/user.php';
 
 <body>
 
-  <?
-  include 'app/include/header.php';
-  ?>
+ 
 
+
+<button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
 
   <main>
     <div class="container">
       <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
         <h1 class="register-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
             <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
@@ -37,7 +36,7 @@ include 'app/controllers/user.php';
               <rect width="25.0799" height="25.0799" transform="matrix(0.91707 0.398726 -0.91707 0.398726 11.8477 4.54492)" fill="#FAC02B" />
             </g>
           </svg>
-          <span style="display: inline-block; vertical-align: middle;">Register</span>
+          <span class="register-title">Register</span>
         </h1>
 
         <div class="text1">
@@ -85,23 +84,16 @@ include 'app/controllers/user.php';
         
       </form>
 
-<!--    
-      <div class="or-text">Or</div>
-        <div class="social-icons">
-            <img src="assets\images\facebook.png" alt="Facebook" class="social-icon">
-            <img src="assets\images\google.png" alt="Google" class="social-icon">
-        </div>
--->
+
 </div>
     
 
 
     
   </main>
-  <?
-  include 'app/include/footer.php';
-  ?>
+ 
 
+  <script src="./assets/js/goBack.js"></script>
 
 </body>
 

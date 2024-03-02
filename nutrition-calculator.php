@@ -14,9 +14,10 @@
   </style>
 </head>
 <body>
+<button type="button" class="back-btn"  onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
   <div class="calculator">
   <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
+       
         <h1 class="register-logo">
           <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Nutrition Calculator</span>
         </h1>
@@ -131,6 +132,7 @@
 
   
   <script src="assets/js/nutrition-calculator.js"></script>
+  <script src="./assets/js/goBack.js"></script>
 
 </body>
 </html>

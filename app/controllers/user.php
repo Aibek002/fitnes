@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password'])) {
 // для проверки кода при изменении пароля
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enter-code'])) {
     $code = $_POST['firstnumber'] . "" . $_POST['secondnumber'] . "" . $_POST['thirdnumber'] . "" . $_POST['fourthnumber'];
-    echo  $code . " / " . $_SESSION['code'] ;
+    echo  $code . " / " . $_SESSION['code'];
     if ($_SESSION['code'] == $code) {
 
         header('location:' . BASE_URL . 're-password.php');
@@ -124,21 +124,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
 
             // Генерируем случайное число от 1000 до 9999
 
-            if ($_SESSION['code'] == $_POST['code']) {
-                if ($_SESSION['emailWithConfirm'] == $email) {
-                    $id = insert('data_registration', $data_register);
-                    if ($id) {
-                        $user = selectOne('data_registration', ['id_user' => $id]);
-                        header('location:' . BASE_URL . 'login.php');
-                    } else {
-                        echo "Ошибка при регистрации пользователя";
-                    }
-                } else {
-                    $errMsgEmpty = 'Email не совподают с Email который был отправлен код!';
-                }
-            } else {
-                $errMsgEmpty = 'Код не совподают';
-            }
+            $id = insert('data_registration', $data_register);
+            if ($id) {
+                $user = selectOne('data_registration', ['id_user' => $id]);
+                header('location:' . BASE_URL . 'Notification.php');
+            } 
         }
     }
 } else {

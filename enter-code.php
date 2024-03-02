@@ -18,15 +18,13 @@ include 'app/controllers/user.php';
 
 <body>
 
-  <?
-  include 'app/include/header.php';
-  ?>
+  
+<button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
 
 
   <main>
     <div class="container">
       <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
       
         <form action='enter-code.php' method="post">
           <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Submit Code </span>
@@ -49,11 +47,9 @@ include 'app/controllers/user.php';
 
     </div>
   </main>
-  <?
-  include 'app/include/footer.php';
-  ?>
 
 
+  <script src="./assets/js/goBack.js"></script>
 
 </body>
 
