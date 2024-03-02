@@ -1,59 +1,18 @@
-#name , #surname , #email ,#tel{
-width: 110px;
-border-color: white;
-}
-#msg{
-    width: 250px;
-    margin-top: 30px;
-}
-
-.container-footer{
-    display: flex;
-    height: 250px;
-    margin-top: 100px;
-    
-}
-.left{
-    width: 30%;
-    background: #1F64FF;
-}
-.left p{
-    font-size: 14px;
-    color: white;
-    padding: 10px;font-size: 14px;
-    color: white;
-    padding: 42px 17px 32px;
-}
-#name , #surname , #email ,#msg ,#tel {
-    border: none; /* Удаляем рамку */
-    border-bottom: 1px solid #1F64FF; /* Добавляем нижнюю линию */
-    outline: none; /* Удаляем обводку при фокусе */
-    background-color: transparent; /* Делаем фон инпута прозрачным */
-    color: #1F64FF;
-    height: 50px;
-
-}
-
-/* Стили для инпута при фокусе */
-#name:focus {
-    border-bottom: 2px solid blue; /* Изменяем цвет и толщину нижней линии при фокусе */
-}
-.send-btn{
-    color:white;
-    background-color: #30F2F2;
-    width: 50%;
-    border-radius: 30px;
-    border-color: transparent;
-    margin-left:55% ;
-    margin-top:20px;
-}
-form{
-    width: 70%;
-}
-.nav{
+.footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    background-color: #D9D9D9; /* Цвет фона футера */
+    padding: 20px; /* Отступы внутри футера */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Тень под футером */
     display: flex;
+    justify-content: space-around;
 }
-.nav li{
-    width: 40%;
+.first a, .second a , .third a, .fourth a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:#6F6E6E;
+    text-decoration: none;
 }

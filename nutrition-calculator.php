@@ -133,6 +133,8 @@
   
   <script src="assets/js/nutrition-calculator.js"></script>
   <script src="./assets/js/goBack.js"></script>
-
+  <?
+include './app/include/footer.php'
+?>
 </body>
 </html>
