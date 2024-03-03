@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+}
+.edit-profile {
+  display: flex; /* Make the container flex */
+  align-items: center; /* Center the items vertically */
+  border: 1.5px solid #827e7e;
+  padding: 10px 20px;
+  height: 60px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 20px;
+  border-radius: 40px;
+}
+.containers {
+  padding-right: 0;
+  padding-top: 40px;
+}
+.info-users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.GoalText {
+  width: 391px;
+  height: 97px;
+  background: #1f64ff;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 27, 81, 0.563);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.activatyLevel , .bodyfat {
+    width: 391px;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background: #1f64ff;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+}
+.age,
+.height,
+.weight,
+.gender
+ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 70px;
+  background: #1f64ff;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+}
+.GoalText p{
+  margin-bottom: 2px;
+  font-size: 20px;
+}
+.GoalText strong{
+
+}
+.bodyfat p,
+.activatyLevel p {
+    color: white;
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+.age p,
+.height p,
+.weight p,
+.gender p
+{
+  color: white;
+  margin-bottom: 2px;
+  font-size: 20px;
+
+}
+.bodyfat strong,
+.activatyLevel strong {
+    font-size: 20px;
+
+}
+.age strong,
+.height strong,
+.weight strong,
+.gender strong{
+  text-align: center;
+  font-size: 11px;
+}
+.username {
+  margin-left: 10px; /* Add some space between the logo and username */
+}
+.username p {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+.username a {
+  margin: 0;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.edit-profile a {
+  display: inline-block; /* Make the "Edit Profile" link inline-block */
+}
+
+.editSvg {
+  margin-left: 50%;
+}
+.user {
+  padding: 60px 25px 14px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 132%;
+  color: #0b3587;
+}

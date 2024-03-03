@@ -16,6 +16,26 @@ require './PHPMailer/src/SMTP.php';
 $isSubmit = false;
 $errMsgEmpty = "";
 $errEmail = '';
+
+// Получаем идентификатор пользователя из сессии
+$id_user = $_SESSION['id_user'];
+
+// Вызываем функцию selectOne для получения данных из таблицы
+// 'users_information_for_calculator' для заданных условий
+$data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
+// prints($data);
+// Сохраняем значение 'goal' в сессии
+$_SESSION['goaltext'] = $data['goal'];
+$_SESSION['gender'] = $data['gender'];
+$_SESSION['height'] = $data['height'];
+$_SESSION['weight'] = $data['weight'];
+$_SESSION['age'] = $data['age'];
+$_SESSION['bodyfat'] = $data['bodyfat'];
+$_SESSION['acivityLevel'] = $data['activityLevel'];
+
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
     $id_users = '';
     $goal = $_POST['goal-options'];
@@ -25,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
     $age = trim($_POST['age']);
     $bodyfat = trim($_POST['bodyfat-options']);
     $activateLevel = trim($_POST['activateLevel']);
+    $_SESSION['goaltext']=$goal;
+    // echo $_SESSION['goaltext'];
     // $set = trim($_POST['set-goal-options']);
 
     // echo $goal . "." . $gender . " " . $height . " " . $weight . " " . $age . " " . $bodyfat . " " . $set;
@@ -200,7 +222,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
                 $_SESSION['email'] = $user['email'];
                 // prints($_SESSION['name']);
 
-                header('location:' . BASE_URL);
+                header('location:' . BASE_URL . 'profile.php');
             } else {
                 $errMsgEmpty = 'логин или пароль не правельный';
             }
