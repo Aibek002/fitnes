@@ -16,8 +16,45 @@ require './PHPMailer/src/SMTP.php';
 $isSubmit = false;
 $errMsgEmpty = "";
 $errEmail = '';
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition-calculator'])){
-    
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
+    $id_users = '';
+    $goal = $_POST['goal-options'];
+    $gender = $_POST['gender-options'];
+    $height = trim($_POST['height']);
+    $weight = trim($_POST['weight']);
+    $age = trim($_POST['age']);
+    $bodyfat = trim($_POST['bodyfat-options']);
+    $activateLevel = trim($_POST['activateLevel']);
+    // $set = trim($_POST['set-goal-options']);
+
+    // echo $goal . "." . $gender . " " . $height . " " . $weight . " " . $age . " " . $bodyfat . " " . $set;
+
+    if ($goal === '' || $gender === '' || $height === '' || $weight === '' || $age === '' || $bodyfat === '' || $activateLevel === '' || $set === '') {
+        $errMsgEmpty = "Не все поля заполнены!";
+    }else{
+    $data_info = [
+        'goal' => $goal,
+        'gender' => $gender,
+        'height' => $height,
+        'weight' => $weight,
+        'age' => $age,
+        'bodyfat' => $bodyfat,
+        'activityLevel' => $activateLevel,
+        'setWeightGoal' => $bodyfat,
+        'weightGoal' => $activateLevel,
+        // 'weightChangeRate' => $set,
+
+
+
+
+
+    ];
+     insert('users_information_for_calculator', $data_info);
+    if ($id) {
+        $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
+        header('location:' . BASE_URL . 'Notification.php');
+    }
+}
 }
 
 
@@ -132,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
             if ($id) {
                 $user = selectOne('data_registration', ['id_user' => $id]);
                 header('location:' . BASE_URL . 'Notification.php');
-            } 
+            }
         }
     }
 } else {
