@@ -6,10 +6,16 @@ body {
   align-items: center; /* Center the items vertically */
   border: 1.5px solid #827e7e;
   padding: 10px 20px;
-  height: 60px;
+  height: 100px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin: 20px;
   border-radius: 40px;
+  background: #1F64FF;
+}
+
+.edit-profiles{
+    width: 200px;
+    color: #fff;
 }
 .containers {
   padding-right: 0;
@@ -23,94 +29,141 @@ body {
 .GoalText {
   width: 391px;
   height: 97px;
-  background: #1f64ff;
   margin: 20px;
   border-radius: 20px;
   padding: 20px;
-  color: white;
   box-shadow: 0 4px 4px 0 rgba(0, 27, 81, 0.563);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.activatyLevel , .bodyfat {
-    width: 391px;
-    flex-direction: column;
+.activatyLevel,
+.bodyfat {
+    display: flex;
+  width: 391px;
   align-items: center;
-  justify-content: center;
-  height: 100px;
-  background: #1f64ff;
   margin: 10px;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  color: white;
-  text-align: center;
+  border-radius: 15px;
+height: 85px;
+justify-content: space-between;
 }
 .age,
 .height,
 .weight,
-.gender
- {
+.gender {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 140px;
-  height: 70px;
-  background: #1f64ff;
+  width: 135px;
+    height: 100px;
   margin: 10px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  color: white;
-  text-align: center;
 }
-.GoalText p{
-  margin-bottom: 2px;
-  font-size: 20px;
-}
-.GoalText strong{
+.age img,
+.height img,
+.weight img,
+.gender img {
+  
 
 }
+.a{
+    margin: 47px 20px ;
+    
+    width: 35px;
+    height: 35px;
+}
+.b{
+    margin: 47px 10px ;
+
+    width: 35px;
+    height: 35px;
+}
+.c{
+   
+    margin: 37px 0px ;
+
+    width: 70px;
+    height: 45px;
+}
+.d{
+    margin: 47px 20px ;
+
+    width: 35px;
+    height: 35px;
+}
+.e{
+
+    width: 45px;
+    height: 65px;
+}
+.ff{
+
+    width: 57px;
+    height: 67px;
+}
+
+
 .bodyfat p,
 .activatyLevel p {
-    color: white;
-    margin-bottom: 2px;
-    font-size: 20px;
+    font-family: var(--font3);
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+
 }
+
 .age p,
 .height p,
 .weight p,
-.gender p
-{
-  color: white;
+.gender p {
   margin-bottom: 2px;
-  font-size: 20px;
-
+  font-size: 16px;
 }
 .bodyfat strong,
 .activatyLevel strong {
-    font-size: 20px;
-
+    font-family: var(--font3);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: #000;
 }
 .age strong,
 .height strong,
 .weight strong,
-.gender strong{
-  text-align: center;
-  font-size: 11px;
+.gender strong {
+  font-family: var(--font3);
+font-weight: 400;
+font-size: 24px;
+letter-spacing: -0.02em;
+color: #000;
+}
+.span{
+    font-family: var(--font3);
+font-weight: 400;
+font-size: 16px;
+letter-spacing: -0.02em;
+text-align: center;
+color: rgba(0, 0, 0, 0.5);
+margin-left: 5px;
 }
 .username {
   margin-left: 10px; /* Add some space between the logo and username */
 }
 .username p {
-  margin: 0;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  color: #000;
+    font-family: var(--third-family);
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 5%;
+    line-height: 79%;
+    color: #fff;
+}
+.logo-user img{
+    width: 82px;
+height: 99px;
 }
 .username a {
   margin: 0;
@@ -121,12 +174,10 @@ body {
   color: #000;
 }
 
-.edit-profile a {
-  display: inline-block; /* Make the "Edit Profile" link inline-block */
-}
+
 
 .editSvg {
-  margin-left: 50%;
+  /* margin-left: 50%; */
 }
 .user {
   padding: 60px 25px 14px;
@@ -135,4 +186,36 @@ body {
   font-size: 36px;
   line-height: 132%;
   color: #0b3587;
+}
+.box {
+  width: 391px;
+  height: 18 0px;
+  margin: 20px;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 4px 0 rgba(0, 27, 81, 0.563);
+}
+.first {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Change this to your desired background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* Adjust spacing between icons */
+}
+.f {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  justify-content: center;
+}
+.f p {
+  margin-top: -4px;
+  margin-bottom: 0;
 }
