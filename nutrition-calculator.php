@@ -19,70 +19,7 @@
 <body>
     <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
     <div class="calculator">
-    <?
-     $gender = $_POST["gender-options"];
-     $height = $_POST["height"];
-     $weight = $_POST["weight"];
-     $age = $_POST["age"];
-     $activityLevel = $_POST["activateLevel"];
- 
-     // Рассчитываем базовый метаболизм (BMR) в зависимости от пола
-     if ($gender == "Male") {
-         $bmr = 88.362 + (13.397 * $weight) + (4.799 * $height) - (5.677 * $age);
-     } elseif ($gender == "Female") {
-         $bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
-     }
- 
-     // Учитываем уровень физической активности
-     switch ($activityLevel) {
-         case "Sedentary":
-             $bmr *= 1.2;
-             break;
-         case "Lightly Active":
-             $bmr *= 1.375;
-             break;
-         case "Moderately Active":
-             $bmr *= 1.55;
-             break;
-         case "Very Active":
-             $bmr *= 1.725;
-             break;
-         case "Extremely Active":
-             $bmr *= 1.9;
-             break;
-     }
- 
-     // Выводим результат
-      echo '<div class="result">';
-      echo 'Your Basal Metabolic Rate (BMR) is: <br><strong>' . round($bmr, 2) . ' kcal/day</strong>';
-      echo '</div>';
-
-      // Рассчитываем количество калорий от каждого макронутриента
-    $carbsCalories = $bmr * 0.45; // 45% калорий от углеводов
-    $proteinCalories = $bmr * 0.3; // 30% калорий от белков
-    $fatCalories = $bmr * 0.25; // 25% калорий от жиров
-
-    // Преобразуем калории в граммы (1 г белка и углеводов = 4 калории, 1 г жира = 9 калорий)
-    $carbsGrams = $carbsCalories / 4;
-    $proteinGrams = $proteinCalories / 4;
-    $fatGrams = $fatCalories / 9;
-
-    // Выводим результат
-    echo '<div class="result">';
-    echo '<h2>Recommended Macronutrient Balance</h2>';
-    echo '<p>Carbohydrates: <strong> ' . round($carbsGrams, 2) . ' grams</strong></p>';
-    echo '<p>Protein: <strong>' . round($proteinGrams, 2) . ' grams </strong></p>';
-    echo '<p>Fat: <strong> ' . round($fatGrams, 2) . ' grams</strong> </p>';
-    echo '</div>';
-    $totalCaloriesPerDay = $bmr;
-    $totalCaloriesPerWeek = $totalCaloriesPerDay * 7;
-
-    // Выводим результат общего количества калорий на неделю
-    echo '<div class="result">';
-    echo '<p>Total Calories per Week : ';
-    echo '<strong>' . round($totalCaloriesPerWeek, 2) . ' kcal/week </strong></p>';
-    echo '</div>';
- ?>
+  
         <div class="text">
 
             <h1 class="register-logo">
