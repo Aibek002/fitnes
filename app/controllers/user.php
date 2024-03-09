@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
 
         if ($id) {
             $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
-            header('location:' . BASE_URL . 'printCalorieCalculate.php');
+            header('location:' . BASE_URL . 'profile.php');
         }
     }
 }

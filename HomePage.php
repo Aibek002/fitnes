@@ -15,7 +15,9 @@
 </head>
 
 <body>
-
+<?
+    include './app/include/header.php'
+    ?>
     <div class="image-container">
         <!-- <img src="assets/images/Group.png" alt="Background Image" >
     <img src="assets/images/Objects.png" alt="Overlay Image" > -->

@@ -1,5 +1,8 @@
 <? include './app/controllers/user.php' ?>
-<!DOCTYPE html>
+<?
+    include './app/include/header.php'
+    ?>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +19,8 @@
     </style>
 </head>
 
-<body>
+<body class='body'>
+
     <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
     <div class="calculator">
   

@@ -16,6 +16,9 @@ include './app/controllers/user.php'
 </head>
 
 <body>
+<?
+    include './app/include/header.php'
+    ?>
 <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
   
     <main>

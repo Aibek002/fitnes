@@ -18,7 +18,9 @@ include 'app/controllers/user.php';
 
 <body>
 
-  
+<?
+    include './app/include/header.php'
+    ?>
 <button type="button" class="back-btn" onclick='goBack()'><img src="assets\images\back.png"  class ="Back"></button>
 
 

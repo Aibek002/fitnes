@@ -18,7 +18,9 @@ include 'app/controllers/user.php';
 
 <body>
 
-
+<?
+    include './app/include/header.php'
+    ?>
 
 
     <main>

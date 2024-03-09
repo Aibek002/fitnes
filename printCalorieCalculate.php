@@ -15,7 +15,9 @@
 </head>
 
 <body>
-
+<?
+    include './app/include/header.php'
+    ?>
     <div class="containers">
         <!-- <h2 class="user"><? echo $_SESSION['name'] ?></h2> -->
 
@@ -36,7 +38,7 @@
             </div>
             <div class="info-users">
     
-    <div class="height">
+            <div class="height">
        <div class="first-item"><p class="title-info">Carbohydrates  </p><p class="info"><? echo $_SESSION['Carbohydrates']; ?> <br><span>grams</span></p></div>
        <div class="second-item"><img src="./assets/images/age.png" alt=""></div>
     </div>

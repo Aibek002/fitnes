@@ -17,6 +17,9 @@
 </head>
 
 <body>
+<?
+    include './app/include/header.php'
+    ?>
     <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
     <div class="calculator">
 
