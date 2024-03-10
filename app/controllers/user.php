@@ -34,6 +34,31 @@ $_SESSION['bodyfat'] = $data['bodyfat'];
 $_SESSION['acivityLevel'] = $data['activityLevel'];
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
+
+    $selectedOption = $_POST['select-type'];
+    // prints($_POST['name'] . "/");
+    // exit();
+    switch ($selectedOption) {
+        case 'Anything':
+            header('Location: ' . BASE_URL . 'anything.php');
+            break;
+        case 'Paleo':
+            header('Location: ' . BASE_URL . 'paleo.php');
+            break;
+        case 'Vegetarian':
+            header('Location: ' . BASE_URL . 'vegetarian.php');
+            break;
+        case 'Vegan':
+            header('Location: ' . BASE_URL . 'vegan.php');
+            break;
+        case 'Ketogenic':
+            header('Location: ' . BASE_URL . 'ketogenic.php');
+        case 'Mediterranean':
+            header('Location: ' . BASE_URL . 'mediterranean.php');
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-informations'])) {
     $params = [
         'goal'          => $_POST['goal-options'],
@@ -104,10 +129,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
             break;
     }
 
-    // Выводим результат
-    //   echo '<div class="result">';
-    //   echo 'Your Basal Metabolic Rate (BMR) is: <br><strong>' . . ' kcal/day</strong>';
-    //   echo '</div>';
 
     // Рассчитываем количество калорий от каждого макронутриента
     $carbsCalories = $bmr * 0.45; // 45% калорий от углеводов
@@ -124,27 +145,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
     $_SESSION['dayKcall'] = round($bmr, 2);
 
 
-    // Выводим результат
-    // echo '<div class="result">';
-    // echo '<h2>Recommended Macronutrient Balance</h2>';
-    // echo '<p>Carbohydrates: <strong> ' .  . ' grams</strong></p>';
-    // echo '<p>Protein: <strong>' .  . ' grams </strong></p>';
-    // echo '<p>Fat: <strong> ' .  . ' grams</strong> </p>';
-    // echo '</div>';
+
     $totalCaloriesPerDay = $bmr;
     $totalCaloriesPerWeek = $totalCaloriesPerDay * 7;
     $totalCaloriesPerMonth = $totalCaloriesPerDay * 30;
 
     $_SESSION['totalCaloriesPerWeek'] = round($totalCaloriesPerWeek, 2);
     $_SESSION['month'] = round($totalCaloriesPerMonth, 2);
-
-    // Выводим результат общего количества калорий на неделю
-    // echo '<div class="result">';
-    // echo '<p>Total Calories per Week : ';
-    // echo '<strong>' . round($totalCaloriesPerWeek, 2) . ' kcal/week </strong></p>';
-    // echo '</div>';
-    // echo $_SESSION['goaltext'];
-    // $set = trim($_POST['set-goal-options']);
 
     // echo $goal . "." . $gender . " " . $height . " " . $weight . " " . $age . " " . $bodyfat . " " . $set;
 
