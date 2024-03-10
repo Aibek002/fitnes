@@ -15,7 +15,8 @@ body {
 
   .back-btn {
     position: absolute;
-    left: 0px;
+    top: 40px;
+    left: 30px;
     border: none;
     cursor: pointer;
     border-radius: 50%; 
@@ -38,14 +39,14 @@ body {
     .calculator {
       max-width: 90%;
       margin: 20px auto;
-      padding: 10px;
+      padding: 100px 10px 100px 10px;
       text-align: left;
       position: relative;
     }
 
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 13px;
     }
 
     input[type="number"] {
@@ -85,14 +86,62 @@ body {
       display: flex;
       justify-content: center;
       margin-bottom: 10px;
+      height: 50px;
       border: 1px solid #000000;
       border-radius: 5px;
       font-size: 16px;
       text-align: center;
+      justify-content: space-between;
       
     
     }
-
+    .goal-selector-2{
+      display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    /* justify-content: space-between; */
+    }
+    .goal-selector-2 label , .goal-selector-2 input{
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: inherit;
+    }
+    .result {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+  }
+  .result strong{
+    color: #007bff;
+  }
+  .result h2{
+    font-weight: 800;
+    font-size: 19px
+  }
+  .result p{
+    text-align: left;
+  }
+    .goal-selector label , .goal-selector input{
+      width: 35%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: inherit;
+    }
     .goal-option-3 {
       width: 34%;
       cursor: pointer;
@@ -109,7 +158,22 @@ body {
       padding: 10px 0px;
 
     }
-
+    .btn-check:checked + .btn-outline-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+  }
+  
+  .btn-outline-primary {
+      color: #007bff;
+      border-color: #007bff;
+  }
+  
+  .btn-outline-primary:not(:checked) {
+      color: inherit;
+      border-color: #ced4da; /* Цвет бордера для невыбранной опции */
+  }
+  
     .goal-option {
       width: 100%;
       cursor: pointer;
@@ -128,7 +192,7 @@ body {
     }
 
     .selected {
-      background-color: #1BA3F0;
+      background-color: #1F64FF;
       color: #fff;
     }
 
@@ -143,7 +207,12 @@ body {
     display: none;
   }
   #diet-plan{
-    display: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 132%;
+    color: #0d0d0d;
+    margin-bottom: 20px;
   }
 
   .continue-btn {

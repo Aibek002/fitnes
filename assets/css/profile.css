@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+}
+.edit-profile {
+  display: flex; /* Make the container flex */
+  align-items: center; /* Center the items vertically */
+  border: 1.5px solid #827e7e;
+  padding: 10px 20px;
+  height: 100px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 20px;
+  border-radius: 40px;
+  background: #1f64ff;
+}
+
+.edit-profiles {
+  width: 200px;
+  color: #fff;
+}
+.containers {
+  padding-right: 0;
+  padding-top: 40px;
+}
+.info-users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.GoalText {
+  width: 391px;
+  height: 97px;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 27, 81, 0.563);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.activatyLevel,
+.bodyfat {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  justify-content: space-between;
+  width: 371px;
+height: 85px;
+}
+.age,
+.height,
+.weight,
+.gender {
+  display: flex;
+  width: 165px;
+  height: 103px;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.first-item {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 10px 0 0 10px;
+}
+.second-item {
+  display: flex;
+  align-items: end;
+  height: 90%;
+}
+.second-items{
+  display: flex;
+  align-items: end;
+}
+
+.title-info {
+  font-family: var(--font3);
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+
+}
+.info{
+  font-family: var(--font8);
+font-weight: 400;
+font-size: 36px;
+letter-spacing: -0.02em;
+color: #000;
+
+}
+.info span{
+  font-family: var(--font3);
+font-weight: 400;
+font-size: 16px;
+letter-spacing: -0.02em;
+text-align: center;
+color: rgba(0, 0, 0, 0.5);
+}
+
+.info-gender{
+  font-family: var(--font8);
+font-weight: 400;
+font-size: 20px;
+letter-spacing: -0.02em;
+color: #000;
+}
+.title-info-long{
+  font-family: var(--font3);
+font-weight: 400;
+font-size: 16px;
+color: rgba(0, 0, 0, 0.8);
+margin-bottom: 0;
+}
+.info-long{
+  font-family: var(--font3);
+font-weight: 400;
+font-size: 24px;
+letter-spacing: -0.02em;
+color: #000;
+}
+.long-image-first{
+  width: 41px;
+  height: 55px;
+  /* margin-top: 10px; */
+
+}
+.long-image-second{
+  width: 55px;
+  height: 55px;
+  /* margin-top: 10px; */
+}
+.username {
+  margin-left: 10px; /* Add some space between the logo and username */
+}
+.username p {
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 5%;
+  line-height: 79%;
+  color: #fff;
+}
+.logo-user img {
+  width: 82px;
+  height: 99px;
+}
+.username a {
+  margin: 0;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.user {
+  padding: 60px 25px 14px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 132%;
+  color: #0b3587;
+}
+.box {
+  width: 391px;
+  height: 18 0px;
+  margin: 20px 20px 150px 20px;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 4px 0 rgba(0, 27, 81, 0.563);
+}
+.first {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Change this to your desired background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* Adjust spacing between icons */
+}
+.f {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  justify-content: center;
+}
+.f p {
+  margin-top: -4px;
+  margin-bottom: 0;
+}
+.information-metobalitic{
+  display: flex;
+  flex-wrap: wrap;
+  width: 371px;
+}
+.firsts-item ,.seconds-item,.thirds-item,.fourths-item{
+width: 48%;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+padding: 20px;
+margin: 1%;
+
+
+}
+.infoss{
+  font-family: var(--font8);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: #1600de;
+}
+.infoss span{
+  font-family: var(--font3);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+.infos{
+    font-family: var(--font8);
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  color: #1600de;
+
+}
+.infos span{
+  font-family: var(--font3);
+font-weight: 400;
+font-size: 16px;
+letter-spacing: -0.02em;
+text-align: center;
+color: rgba(0, 0, 0, 0.5);
+}

@@ -1,12 +1,12 @@
 body {
-  font-family: 'Lato';
+  font-family: "Lato";
   margin: 0;
   padding: 0;
 }
 
 .container {
   max-width: 80%;
-  margin: 20px auto;
+  margin: 140px auto;
   padding: 20px;
   border-radius: 5px;
   position: relative;
@@ -14,22 +14,21 @@ body {
 
 .text {
   position: relative;
-  margin-bottom:16px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
 .back-btn {
   position: absolute;
-  /* top: 5px; */
-  left: 0px;
+  top: 40px;
+  left: 30px;
   border: none;
   cursor: pointer;
   border-radius: 50%; /* Makes the button circular */
   overflow: hidden; /* Clips the rectangular image to fit within the circle */
   width: 40px;
   height: 40px;
-  background-color: #1F64FF;
-  
+  background-color: #1f64ff;
 }
 
 .back-btn img {
@@ -40,7 +39,15 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
-
+.register-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  margin-left: 5px;
+}
 .text1 {
   display: flex;
   width: 100%;
@@ -50,7 +57,11 @@ body {
   text-align: center;
   flex-shrink: 0;
   margin-top: 2%;
+  font-family: var(--font-family);
+  font-weight: 400;
   font-size: 15px;
+  line-height: 125%;
+  color: #000;
 }
 
 .text1 p {
@@ -63,7 +74,7 @@ body {
 }
 .text1 a {
   text-decoration: none;
-  color: #1F64FF;
+  color: #1f64ff;
 }
 
 .input-group {
@@ -72,7 +83,7 @@ body {
 }
 
 p {
-  margin-bottom:4px;
+  margin-bottom: 4px;
   font-size: 14px;
 }
 
@@ -81,8 +92,10 @@ p {
   padding: 1px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid #D8DADC;
+  border: 1px solid #d8dadc;
   border-radius: 5px;
+  width: 350px;
+  height: 50px;
 }
 
 #Username {
@@ -90,8 +103,10 @@ p {
   padding: 1px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid #D8DADC;
+  border: 1px solid #d8dadc;
   border-radius: 5px;
+  width: 350px;
+  height: 50px;
 }
 
 #Email {
@@ -99,8 +114,10 @@ p {
   padding: 1px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid #D8DADC;
+  border: 1px solid #d8dadc;
   border-radius: 5px;
+  width: 350px;
+  height: 50px;
 }
 
 #Password {
@@ -108,15 +125,17 @@ p {
   padding: 1px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid #D8DADC;
+  border: 1px solid #d8dadc;
   border-radius: 5px;
+  width: 350px;
+  height: 50px;
 }
 
 .continue-btn {
   width: 100%;
   padding: 10px;
-  background-color: #1F64FF;
-  color: #FFFFFF;
+  background-color: #1f64ff;
+  color: #ffffff;
   border: none;
   font-size: 23px;
   border-radius: 10px;
@@ -126,7 +145,7 @@ p {
   cursor: pointer;
   justify-content: center;
   display: inline-flex;
-    align-items: center;
+  align-items: center;
 }
 
 .continue-btn img {
@@ -134,107 +153,3 @@ p {
   width: 20px;
   height: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-
-  
-.verification-code {
-  display: flex;
-  justify-content: center;
-}
-
-.verification-code input {
-  width: 40px;
-  height: 40px;
-  margin: 0 5px;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-  #country-code {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-#phone {
-  width: 100%;
-  padding: 1px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border: 1px solid #D8DADC;
-  border-radius: 5px;
-}  
-
-  .Signemail-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #d9d9d9;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-.alternative-sign-in {
-  margin-top: 20px auto;
-  width: 60%;
-  text-align: center;
-}
-
-.social-link {
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.social-link img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}  
-
-.button{
-  align-items: center;
-  width: 80%;
-  margin:  auto;
-}
-
-.register-logo svg {
-  margin-right: 5px;
-}
-.or-text {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 23px;
-}
-.social-icons {
-  display: flex;
-  justify-content: center;
-}
-.social-icon {
-  width: 50px;
-  margin: 0 40px;
-  cursor: pointer;
-}
-
-*/

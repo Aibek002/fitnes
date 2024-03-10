@@ -18,15 +18,12 @@ include 'app/controllers/user.php';
 
 <body>
 
-  <?
-  include 'app/include/header.php';
-  ?>
 
+<button type="button" class="back-btn"  onclick="goBack()"><img src="assets\images\back.png" alt="Back"></button>
 
   <main>
     <div class="container">
       <div class="text">
-        <button type="button" class="back-btn"><img src="assets\images\back.png" alt="Back"></button>
         <h1 class="register-logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
             <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
@@ -38,15 +35,18 @@ include 'app/controllers/user.php';
             </g>
           </svg>
 
-          <span style="display: inline-block; vertical-align: middle; font-size: 23px; font-weight: bold;">Re-Password</span>
+          <span class="New-password-title">Re-Password</span>
         </h1>
       </div>
-      <div class="text1">
-      </div>
+    
+      <p class="subtitle">Enter your email </p>
+      <p class="subtext">The activation code will be sent via Emil</p>
       <div class="form-floating">
         <p for="floatingInput"><?= $errMsgEmpty ?></p>
       </div>
+
       <form action="re-password.php" method="post">
+
       <div class="input-group">
         <input  name='code' type="int" id="code" placeholder="code" required>
         </div>
@@ -63,10 +63,9 @@ include 'app/controllers/user.php';
 
     </div>
   </main>
-  <?
-  include 'app/include/footer.php';
-  ?>
+ 
 
+  <script src="./assets/js/goBack.js"></script>
 
 </body>
 

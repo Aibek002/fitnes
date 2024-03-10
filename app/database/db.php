@@ -94,6 +94,7 @@
                 $coll = $coll . "," . " $key ";
                 $mask = $mask . "," . "'" . " $value " . "'";
             }
+            
             $i++;
         }
         $sql = "INSERT INTO $table ($coll) VALUES ($mask)";

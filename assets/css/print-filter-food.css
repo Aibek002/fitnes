@@ -1,0 +1,97 @@
+.title {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 132%;
+  color: #000;
+  padding: 50px 20px 0;
+}
+.flex {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.first-flex-item {
+  border: 2px solid #1f64ff;
+  border-radius: 100px;
+  width: 378px;
+  height: 74px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+}
+.second-flex-item {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #f6f6f6;
+  border-radius: 5px;
+  width: 378px;
+  height: 85px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+}
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 132%;
+  color: #333;
+  margin: 30px 0 0 0;
+}
+.comment {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 132%;
+  color: #827e7e;
+  margin: 0;
+}
+.end {
+  height: 120px;
+}
+.first-flex-item .more {
+  margin: -37px 0 0 00%;
+}
+.second-flex-item .more {
+  margin: -37px 0 0 10%;
+}
+.first-items svg {
+  margin-left: -20px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+}
+.first-text {
+  width: 230px;
+}
+.second-text p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #2405cf;
+}
+.second-text p span {
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 9px;
+  color: #868686;
+}
+.second-text svg {
+  margin: 60px 0 0 20px;
+}
+.span {
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 9px;
+  color: #868686;
+  margin: 61px 0px 0 6px !important;
+}
+.second-text {
+  display: flex;
+}
