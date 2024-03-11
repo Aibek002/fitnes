@@ -62,7 +62,7 @@
             <div class="info">
                 <label for="height">Height</label>
                 <div class="input-with-suffix">
-                    <input name='height' type="number" id="height" min="0" step="0.1">
+                    <input name='height' type="number" id="height" min="0" step="0.1" value="<?echo  $_SESSION['height'];?>">
                     <span>cm</span>
                 </div>
             </div>
@@ -70,7 +70,7 @@
             <div class="info">
                 <label for="weight">Weight</label>
                 <div class="input-with-suffix">
-                    <input name='weight' type="number" id="weight" min="0" step="0.1">
+                    <input name='weight' type="number" id="weight" min="0" step="0.1" value="<?echo  $_SESSION['weight'];?>">
                     <span>kg</span>
                 </div>
             </div>
@@ -79,7 +79,7 @@
             <div class="info">
                 <label for="age">Age</label>
                 <div class="input-with-suffix">
-                    <input name='age' type="number" id="year" min="0" step="0.1">
+                    <input name='age' type="number" id="year" min="0" step="0.1" value="<?echo  $_SESSION['age'];?>">
                     <span>years</span>
                 </div>
             </div>

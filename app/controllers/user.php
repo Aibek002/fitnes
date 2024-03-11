@@ -19,8 +19,8 @@ $errEmail = '';
 
 // Получаем идентификатор пользователя из сессии
 $id_user = $_SESSION['id_user'];
-$user = selectOne('users_information_for_calculator', ['id_user' => $id]);
-// prints($user . " / ");
+
+$user = selectOne('data_registration', ['id_user']);
 
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
@@ -34,6 +34,7 @@ $_SESSION['weight'] = $data['weight'];
 $_SESSION['age'] = $data['age'];
 $_SESSION['bodyfat'] = $data['bodyfat'];
 $_SESSION['acivityLevel'] = $data['activityLevel'];
+// prints($user['id_user'] . " / " . $data['id_user']);
 
 $id_users = '';
 $goal = $_SESSION['goaltext'];
@@ -94,6 +95,8 @@ $totalCaloriesPerMonth = $totalCaloriesPerDay * 30;
 
 $_SESSION['totalCaloriesPerWeek'] = round($totalCaloriesPerWeek, 2);
 $_SESSION['month'] = round($totalCaloriesPerMonth, 2);
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
 
     $selectedOption = $_POST['select-type'];
@@ -118,6 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
             header('Location: ' . BASE_URL . 'mediterranean.php');
     }
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-informations'])) {
     $params = [
@@ -153,35 +158,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-informations']
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
 
-
-    // echo $goal . "." . $gender . " " . $height . " " . $weight . " " . $age . " " . $bodyfat . " " . $set;
-
-    if ($goal === '' || $gender === '' || $height === '' || $weight === '' || $age === '' || $bodyfat === '' || $activateLevel === '' || $set === '') {
-        $errMsgEmpty = "Не все поля заполнены!";
-    } else {
-        $data_info = [
-            'goal' => $goal,
-            'gender' => $gender,
-            'height' => $height,
-            'weight' => $weight,
-            'age' => $age,
-            'bodyfat' => $bodyfat,
-            'activityLevel' => $activateLevel,
-            'setWeightGoal' => $bodyfat,
-            'weightGoal' => $activateLevel,
-            // 'weightChangeRate' => $set,
-
-
-
-
-
+    if (isset($data['id_user'])) {
+        $params = [
+            'goal'          => $_POST['goal-options'],
+            'gender'        => $_POST['gender-options'],
+            'height'        => trim($_POST['height']),
+            'weight'        => trim($_POST['weight']),
+            'age'           => trim($_POST['age']),
+            'bodyfat'       => $_POST['bodyfat-options'], // Не уверен, нужна ли здесь функция trim
+            'activityLevel' => $_POST['activateLevel']    // Не уверен, нужна ли здесь функция trim
         ];
+        $id = $data['id_user']; // Поправил на $id
 
-        $id =  insert('users_information_for_calculator', $data_info);
+        // Используем параметризированный запрос
+        $sql = "UPDATE users_information_for_calculator SET goal = :goal, gender = :gender, height = :height, weight = :weight, age = :age, bodyfat = :bodyfat, activityLevel = :activityLevel WHERE id_user = :id";
+        $query = $connection->prepare($sql);
+        // Биндим значения к параметрам
+        $query->bindParam(':goal', $params['goal']);
+        $query->bindParam(':gender', $params['gender']);
+        $query->bindParam(':height', $params['height']);
+        $query->bindParam(':weight', $params['weight']);
+        $query->bindParam(':age', $params['age']);
+        $query->bindParam(':bodyfat', $params['bodyfat']);
+        $query->bindParam(':activityLevel', $params['activityLevel']);
+        $query->bindParam(':id', $id);
+        // Выполняем запрос
+        $query->execute();
+        dbCheckError($query);
 
-        if ($id) {
-            $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
-            header('location:' . BASE_URL . 'profile.php');
+        // Добавляем код для редиректа пользователя
+        header('Location: ' . BASE_URL . 'profile.php');
+    } else {
+        $goal = $_POST['goal-options'];
+        $gender = $_POST['gender-options'];
+        $height = trim($_POST['height']);
+        $weight = trim($_POST['weight']);
+        $age = trim($_POST['age']);
+        $bodyfat = $_POST['bodyfat-options']; // Не уверен, нужна ли здесь функция trim
+        $activateLevel = $_POST['activateLevel'];
+        // echo $goal . "." . $gender . "." . $height . "." . $weight . " " . $age . " " . $bodyfat . " " . $set;
+
+        if ($goal === '' || $gender === '' || $height === '' || $weight === '' || $age === '' || $bodyfat === '' || $activateLevel === '' || $set === '') {
+            $errMsgEmpty = "Не все поля заполнены!";
+        } else {
+            $data_info = [
+                'id_user' => $user['id_user'],
+                'goal' => $goal,
+                'gender' => $gender,
+                'height' => $height,
+                'weight' => $weight,
+                'age' => $age,
+                'bodyfat' => $bodyfat,
+                'activityLevel' => $activateLevel,
+                'setWeightGoal' => $bodyfat,
+                'weightGoal' => $activateLevel,
+                // 'weightChangeRate' => $set,
+
+
+
+
+
+            ];
+
+            $id =  insert('users_information_for_calculator', $data_info);
+
+            if ($id) {
+                $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
+                header('location:' . BASE_URL . 'profile.php');
+            }
         }
     }
 }

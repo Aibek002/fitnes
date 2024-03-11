@@ -83,14 +83,14 @@
   color: #868686;
 }
 .second-text svg {
-  margin: 60px 0 0 20px;
+  margin: 20px 0 0 20px;
 }
 .span {
   font-family: var(--third-family);
   font-weight: 500;
   font-size: 9px;
   color: #868686;
-  margin: 61px 0px 0 6px !important;
+  margin: 20px 0px 0 6px !important;
 }
 .second-text {
   display: flex;
