@@ -77,8 +77,8 @@ include './app/controllers/user.php'
                 <option selected>Select a food group</option>
                 <option value="Anything">Anything</option>
                 <option value="Paleo">Paleo</option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian Vegan">Vegetarian</option>
+                <option value="Vegetarian Vegan">Vegan</option>
                 <option value="Ketogenic">Ketogenic</option>
                 <option value="Mediterranean">Mediterranean</option>
             </select>

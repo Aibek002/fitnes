@@ -25,7 +25,11 @@ $user = selectOne('data_registration', ['id_user']);
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
 $data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
-// prints($data);
+$selected=$_SESSION['select-type-food'] ;
+
+$type = strtolower($selected);
+$food = selectAll('food', ['type' => $type]);
+// prints($food['id']);
 // Сохраняем значение 'goal' в сессии
 $_SESSION['goaltext'] = $data['goal'];
 $_SESSION['gender'] = $data['gender'];
@@ -35,6 +39,7 @@ $_SESSION['age'] = $data['age'];
 $_SESSION['bodyfat'] = $data['bodyfat'];
 $_SESSION['acivityLevel'] = $data['activityLevel'];
 // prints($user['id_user'] . " / " . $data['id_user']);
+
 
 $id_users = '';
 $goal = $_SESSION['goaltext'];
@@ -98,8 +103,9 @@ $_SESSION['month'] = round($totalCaloriesPerMonth, 2);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
+    $selectedOption = $_POST['select-type']; // Получаем выбранное значение из выпадающего списка
+    $_SESSION['select-type-food']    = $selectedOption;
 
-    $selectedOption = $_POST['select-type'];
     // prints($_POST['name'] . "/");
     // exit();
     switch ($selectedOption) {
@@ -109,16 +115,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
         case 'Paleo':
             header('Location: ' . BASE_URL . 'paleo.php');
             break;
-        case 'Vegetarian':
+        case 'Vegetarian Vegan':
             header('Location: ' . BASE_URL . 'vegetarian.php');
             break;
-        case 'Vegan':
+        case 'Vegetarian Vegan':
             header('Location: ' . BASE_URL . 'vegan.php');
             break;
         case 'Ketogenic':
             header('Location: ' . BASE_URL . 'ketogenic.php');
+            break;
+
         case 'Mediterranean':
             header('Location: ' . BASE_URL . 'mediterranean.php');
+            break;
+
     }
 }
 
