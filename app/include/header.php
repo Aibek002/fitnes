@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../../assets/css/header.css">  
 </head>
 <body>
-<div class="container-header">
+<header>
   <div style="width: 428px;
 height: 37px;" class="row">
     <div style="
@@ -38,6 +38,6 @@ height: 37px;" class="row">
       </svg>
     </div>
   </div>
-</div>
+</header>
 </body>
 </html>
