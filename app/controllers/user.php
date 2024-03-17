@@ -25,7 +25,11 @@ $user = selectOne('data_registration', ['id_user']);
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
 $data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
+<<<<<<< HEAD
 $selected = $_SESSION['select-type-food'];
+=======
+$selected=$_SESSION['select-type-food'] ;
+>>>>>>> ad21648ed3a98cbe85d2f505900b4c219a10f268
 
 $type = strtolower($selected);
 $food = selectAll('food', ['type' => $type]);
@@ -128,6 +132,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
         case 'Mediterranean':
             header('Location: ' . BASE_URL . 'mediterranean.php');
             break;
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad21648ed3a98cbe85d2f505900b4c219a10f268
     }
 }
 
