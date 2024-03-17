@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="footer">
+  <div style="left:0" class="footer">
 
     <div class="first">
       <a href="planer.php">

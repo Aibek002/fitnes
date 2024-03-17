@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 main{
-  padding: 10px 10px 185px 30px
+  margin: 20px 10px 185px 30px
 
 }
 .container {
@@ -21,7 +21,7 @@ main{
 
 .back-btn {
   position: absolute;
-  top: 40px;
+  top: 80px;
   left: 30px;
   border: none;
   cursor: pointer;
@@ -65,7 +65,7 @@ main{
 
 .continue-btn {
   position: absolute;
-  top: 960px;
+  top:  710px;
   left: 50%;
   width: 60%;
   transform: translate(-50%, -50%);
@@ -75,17 +75,47 @@ main{
   border: none;
   border-radius: 227px;
 }
-.div-input {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
+
+.title{
+  font-family: var(--third-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 125%;
+color: #000;
 }
-.label {
-  font-family: var(--font3);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 111%;
-  color: #170f49;
-  margin-left: 23px;
-  padding-bottom: 13px;
+.selected{
+  /* width: 50%;
+  margin-left: 15%; */
+}
+.select-reason{
+  margin: 20px 0 0 0 ;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+.subtitle{
+  font-family: var(--third-family);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #252525;
+}
+.fifth{
+  width: 55px;
+}
+.fourth{
+  width: 50px;
+}
+.thrid{
+  width: 45px;
+
+}
+.second{
+  width: 40px;
+}
+.first{
+  width: 30px;
+}
+.btn-outline-primary{
+  margin: 10px 30px 0 0 ;
 }

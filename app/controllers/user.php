@@ -20,10 +20,16 @@ $errEmail = '';
 // Получаем идентификатор пользователя из сессии
 $id_user = $_SESSION['id_user'];
 
+$user = selectOne('data_registration', ['id_user']);
+
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
 $data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
-// prints($data);
+$selected = $_SESSION['select-type-food'];
+
+$type = strtolower($selected);
+$food = selectAll('food', ['type' => $type]);
+// prints($food['id']);
 // Сохраняем значение 'goal' в сессии
 $_SESSION['goaltext'] = $data['goal'];
 $_SESSION['gender'] = $data['gender'];
@@ -32,11 +38,74 @@ $_SESSION['weight'] = $data['weight'];
 $_SESSION['age'] = $data['age'];
 $_SESSION['bodyfat'] = $data['bodyfat'];
 $_SESSION['acivityLevel'] = $data['activityLevel'];
+// prints($user['id_user'] . " / " . $data['id_user']);
+
+
+$id_users = '';
+$goal = $_SESSION['goaltext'];
+$gender = $_SESSION['gender'];
+$height = $_SESSION['height'];
+$weight = $_SESSION['weight'];
+$age = $_SESSION['age'];
+$bodyfat = $_SESSION['bodyfat'];
+$activateLevel = $_SESSION['acivityLevel'];
+
+
+
+// Рассчитываем базовый метаболизм (BMR) в зависимости от пола
+if ($gender == "Male") {
+    $bmr = 88.362 + (13.397 * $weight) + (4.799 * $height) - (5.677 * $age);
+} elseif ($gender == "Female") {
+    $bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
+}
+
+// Учитываем уровень физической активности
+switch ($activityLevel) {
+    case "Sedentary":
+        $bmr *= 1.2;
+        break;
+    case "Lightly Active":
+        $bmr *= 1.375;
+        break;
+    case "Moderately Active":
+        $bmr *= 1.55;
+        break;
+    case "Very Active":
+        $bmr *= 1.725;
+        break;
+    case "Extremely Active":
+        $bmr *= 1.9;
+        break;
+}
+
+
+// Рассчитываем количество калорий от каждого макронутриента
+$carbsCalories = $bmr * 0.45; // 45% калорий от углеводов
+$proteinCalories = $bmr * 0.3; // 30% калорий от белков
+$fatCalories = $bmr * 0.25; // 25% калорий от жиров
+
+// Преобразуем калории в граммы (1 г белка и углеводов = 4 калории, 1 г жира = 9 калорий)
+$carbsGrams = $carbsCalories / 4;
+$proteinGrams = $proteinCalories / 4;
+$fatGrams = $fatCalories / 9;
+$_SESSION['Carbohydrates'] = round($carbsGrams, 2);
+$_SESSION['Protein'] = round($proteinGrams, 2);
+$_SESSION['Fat'] = round($fatGrams, 2);
+$_SESSION['dayKcall'] = round($bmr, 2);
+
+
+$totalCaloriesPerDay = $bmr;
+$totalCaloriesPerWeek = $totalCaloriesPerDay * 7;
+$totalCaloriesPerMonth = $totalCaloriesPerDay * 30;
+
+$_SESSION['totalCaloriesPerWeek'] = round($totalCaloriesPerWeek, 2);
+$_SESSION['month'] = round($totalCaloriesPerMonth, 2);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
+    $selectedOption = $_POST['select-type']; // Получаем выбранное значение из выпадающего списка
+    $_SESSION['select-type-food']    = $selectedOption;
 
-    $selectedOption = $_POST['select-type'];
     // prints($_POST['name'] . "/");
     // exit();
     switch ($selectedOption) {
@@ -46,18 +115,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
         case 'Paleo':
             header('Location: ' . BASE_URL . 'paleo.php');
             break;
-        case 'Vegetarian':
+        case 'Vegetarian Vegan':
             header('Location: ' . BASE_URL . 'vegetarian.php');
             break;
-        case 'Vegan':
+        case 'Vegetarian Vegan':
             header('Location: ' . BASE_URL . 'vegan.php');
             break;
         case 'Ketogenic':
             header('Location: ' . BASE_URL . 'ketogenic.php');
+            break;
+
         case 'Mediterranean':
             header('Location: ' . BASE_URL . 'mediterranean.php');
+            break;
     }
 }
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-informations'])) {
     $params = [
@@ -92,95 +166,75 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-informations']
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
-    $id_users = '';
-    $goal = $_POST['goal-options'];
-    $gender = $_POST['gender-options'];
-    $height = trim($_POST['height']);
-    $weight = trim($_POST['weight']);
-    $age = trim($_POST['age']);
-    $bodyfat = trim($_POST['bodyfat-options']);
-    $activateLevel = trim($_POST['activateLevel']);
-    $_SESSION['goaltext'] = $goal;
 
-
-    // Рассчитываем базовый метаболизм (BMR) в зависимости от пола
-    if ($gender == "Male") {
-        $bmr = 88.362 + (13.397 * $weight) + (4.799 * $height) - (5.677 * $age);
-    } elseif ($gender == "Female") {
-        $bmr = 447.593 + (9.247 * $weight) + (3.098 * $height) - (4.330 * $age);
-    }
-
-    // Учитываем уровень физической активности
-    switch ($activityLevel) {
-        case "Sedentary":
-            $bmr *= 1.2;
-            break;
-        case "Lightly Active":
-            $bmr *= 1.375;
-            break;
-        case "Moderately Active":
-            $bmr *= 1.55;
-            break;
-        case "Very Active":
-            $bmr *= 1.725;
-            break;
-        case "Extremely Active":
-            $bmr *= 1.9;
-            break;
-    }
-
-
-    // Рассчитываем количество калорий от каждого макронутриента
-    $carbsCalories = $bmr * 0.45; // 45% калорий от углеводов
-    $proteinCalories = $bmr * 0.3; // 30% калорий от белков
-    $fatCalories = $bmr * 0.25; // 25% калорий от жиров
-
-    // Преобразуем калории в граммы (1 г белка и углеводов = 4 калории, 1 г жира = 9 калорий)
-    $carbsGrams = $carbsCalories / 4;
-    $proteinGrams = $proteinCalories / 4;
-    $fatGrams = $fatCalories / 9;
-    $_SESSION['Carbohydrates'] = round($carbsGrams, 2);
-    $_SESSION['Protein'] = round($proteinGrams, 2);
-    $_SESSION['Fat'] = round($fatGrams, 2);
-    $_SESSION['dayKcall'] = round($bmr, 2);
-
-
-
-    $totalCaloriesPerDay = $bmr;
-    $totalCaloriesPerWeek = $totalCaloriesPerDay * 7;
-    $totalCaloriesPerMonth = $totalCaloriesPerDay * 30;
-
-    $_SESSION['totalCaloriesPerWeek'] = round($totalCaloriesPerWeek, 2);
-    $_SESSION['month'] = round($totalCaloriesPerMonth, 2);
-
-    // echo $goal . "." . $gender . " " . $height . " " . $weight . " " . $age . " " . $bodyfat . " " . $set;
-
-    if ($goal === '' || $gender === '' || $height === '' || $weight === '' || $age === '' || $bodyfat === '' || $activateLevel === '' || $set === '') {
-        $errMsgEmpty = "Не все поля заполнены!";
-    } else {
-        $data_info = [
-            'goal' => $goal,
-            'gender' => $gender,
-            'height' => $height,
-            'weight' => $weight,
-            'age' => $age,
-            'bodyfat' => $bodyfat,
-            'activityLevel' => $activateLevel,
-            'setWeightGoal' => $bodyfat,
-            'weightGoal' => $activateLevel,
-            // 'weightChangeRate' => $set,
-
-
-
-
-
+    if (isset($data['id_user'])) {
+        $params = [
+            'goal'          => $_POST['goal-options'],
+            'gender'        => $_POST['gender-options'],
+            'height'        => trim($_POST['height']),
+            'weight'        => trim($_POST['weight']),
+            'age'           => trim($_POST['age']),
+            'bodyfat'       => $_POST['bodyfat-options'], // Не уверен, нужна ли здесь функция trim
+            'activityLevel' => $_POST['activateLevel']    // Не уверен, нужна ли здесь функция trim
         ];
+        $id = $data['id_user']; // Поправил на $id
 
-        $id =  insert('users_information_for_calculator', $data_info);
+        // Используем параметризированный запрос
+        $sql = "UPDATE users_information_for_calculator SET goal = :goal, gender = :gender, height = :height, weight = :weight, age = :age, bodyfat = :bodyfat, activityLevel = :activityLevel WHERE id_user = :id";
+        $query = $connection->prepare($sql);
+        // Биндим значения к параметрам
+        $query->bindParam(':goal', $params['goal']);
+        $query->bindParam(':gender', $params['gender']);
+        $query->bindParam(':height', $params['height']);
+        $query->bindParam(':weight', $params['weight']);
+        $query->bindParam(':age', $params['age']);
+        $query->bindParam(':bodyfat', $params['bodyfat']);
+        $query->bindParam(':activityLevel', $params['activityLevel']);
+        $query->bindParam(':id', $id);
+        // Выполняем запрос
+        $query->execute();
+        dbCheckError($query);
 
-        if ($id) {
-            $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
-            header('location:' . BASE_URL . 'profile.php');
+        // Добавляем код для редиректа пользователя
+        header('Location: ' . BASE_URL . 'profile.php');
+    } else {
+        $goal = $_POST['goal-options'];
+        $gender = $_POST['gender-options'];
+        $height = trim($_POST['height']);
+        $weight = trim($_POST['weight']);
+        $age = trim($_POST['age']);
+        $bodyfat = $_POST['bodyfat-options']; // Не уверен, нужна ли здесь функция trim
+        $activateLevel = $_POST['activateLevel'];
+        // echo $goal . "." . $gender . "." . $height . "." . $weight . " " . $age . " " . $bodyfat . " " . $set;
+
+        if ($goal === '' || $gender === '' || $height === '' || $weight === '' || $age === '' || $bodyfat === '' || $activateLevel === '' || $set === '') {
+            $errMsgEmpty = "Не все поля заполнены!";
+        } else {
+            $data_info = [
+                'id_user' => $user['id_user'],
+                'goal' => $goal,
+                'gender' => $gender,
+                'height' => $height,
+                'weight' => $weight,
+                'age' => $age,
+                'bodyfat' => $bodyfat,
+                'activityLevel' => $activateLevel,
+                'setWeightGoal' => $bodyfat,
+                'weightGoal' => $activateLevel,
+                // 'weightChangeRate' => $set,
+
+
+
+
+
+            ];
+
+            $id =  insert('users_information_for_calculator', $data_info);
+
+            if ($id) {
+                $user = selectOne('users_information_for_calculator', ['id_user' => $id]);
+                header('location:' . BASE_URL . 'profile.php');
+            }
         }
     }
 }
@@ -354,8 +408,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
     ];
     $feed = insert('feedback_users', $data_feedback);
     if ($feed) {
-        header('location:' . BASE_URL);
+        header('location:' . BASE_URL . 'profile.php');
     } else {
         echo 'error';
+    }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['button-feedback-submit'])) {
+        $selectedEmojis = $_POST['selected-emojis'];
+        $selectedReasons = $_POST['selected-reasons'];
+        $data_feedback = [
+            'estimation' => implode( " , ", $selectedEmojis ) , // Объединяем выбранные эмодзи в строку
+            'support' => implode(", ", $selectedReasons), 
+           
+        ];
+        $feed = insert('support_service', $data_feedback);
+        if ($feed) {
+            header('location:' . BASE_URL . 'profile.php');
+        } else {
+            echo 'error';
+        }
+        // Обработка выбранных эмодзи
+        if (!empty($selectedEmojis)) {
+            echo "Selected Emojis: ";
+            foreach ($selectedEmojis as $emoji) {
+                echo $emoji . ", ";
+            }
+        }
+
+        // Обработка выбранных причин
+        if (!empty($selectedReasons)) {
+            echo "<br>Selected Reasons: ";
+            foreach ($selectedReasons as $reason) {
+                echo $reason . ", ";
+            }
+        }
     }
 }

@@ -53,29 +53,26 @@
         return $query->fetch();
     }
 
-    function selectAll($table, $parram = [])
-    {
+    function selectAll($table, $param = []) {
         global $connection;
         $sql = 'SELECT * FROM ' . $table;
-
-        foreach ($parram as $key  => $value) {
-            $i = 0;
-            if (!is_numeric($value)) {
-                $value = "'" . $value . "'";
-            }
-            if (!empty($parram)) {
-                if ($i == 0) {
-                    $sql = $sql . ' WHERE ' . $key = $value;
-                } else {
-                    $sql = $sql . ' AND ' . $key = $value;
+        if (!empty($param)) {
+            $sql .= ' WHERE ';
+            $params = [];
+            foreach ($param as $key => $value) {
+                if (!is_numeric($value)) {
+                    $value = "'" . $value . "'";
                 }
+                $params[] = $key . ' = ' . $value;
             }
+            $sql .= implode(' AND ', $params);
         }
         $query = $connection->prepare($sql);
         $query->execute();
         dbCheckError($query);
         return $query->fetchAll();
     }
+    
 
 
     // ---insert data---
@@ -94,7 +91,7 @@
                 $coll = $coll . "," . " $key ";
                 $mask = $mask . "," . "'" . " $value " . "'";
             }
-            
+
             $i++;
         }
         $sql = "INSERT INTO $table ($coll) VALUES ($mask)";
