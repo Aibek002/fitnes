@@ -25,11 +25,7 @@ $user = selectOne('data_registration', ['id_user']);
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
 $data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
-<<<<<<< HEAD
 $selected = $_SESSION['select-type-food'];
-=======
-$selected=$_SESSION['select-type-food'] ;
->>>>>>> ad21648ed3a98cbe85d2f505900b4c219a10f268
 
 $type = strtolower($selected);
 $food = selectAll('food', ['type' => $type]);
@@ -132,10 +128,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
         case 'Mediterranean':
             header('Location: ' . BASE_URL . 'mediterranean.php');
             break;
-<<<<<<< HEAD
-=======
-
->>>>>>> ad21648ed3a98cbe85d2f505900b4c219a10f268
     }
 }
 
@@ -388,11 +380,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['surname'] = $user['surname'];
                 $_SESSION['email'] = $user['email'];
-                // prints($_SESSION['name']);
+                
+                if(trim($user['email'])===  $email && password_verify($pass, $storedHash) === true && $email === trim('admin@gmail.com')){
 
+                    header('location:' . BASE_URL . 'admin_profile.php');
+
+                }else{
+                  
+                    
                 header('location:' . BASE_URL . 'profile.php');
+
+                }
             } else {
+
                 $errMsgEmpty = 'логин или пароль не правельный';
+
             }
         }
     }
