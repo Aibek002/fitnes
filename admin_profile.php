@@ -24,7 +24,10 @@
 <body>
 
 <div class="container">
+
     <h1 class="text-center mb-4">Admin Panel</h1>
+
+
     <div class="row">
         <!-- User Management Card -->
         <div class="col-md-4">
@@ -42,15 +45,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Content Management</h5>
                     <p class="card-text">Add, edit, and delete articles, posts, and other content.</p>
+
                     <a href="/admin-manage-content.php" class="btn btn-primary">Manage Content</a>
                 </div>
             </div>
         </div>
 
+
         <!-- Analytics Card -->
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
+
                     <h5 class="card-title">Feedback</h5>
                     <p class="card-text">View website user's feedback .</p>
                     <a href="admin-users-feedback.php" class="btn btn-primary">View Feedback</a>
@@ -63,6 +69,7 @@
                     <h5 class="card-title">Support Service</h5>
                     <p class="card-text">Add, edit, and delete supports service</p>
                     <a href="/admin-manage-content.php" class="btn btn-primary">Manage Content</a>
+
                 </div>
             </div>
         </div>
