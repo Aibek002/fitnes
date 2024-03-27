@@ -12,6 +12,26 @@ require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
 
 
+// Подключение к базе данных
+include './app/database/connectDB.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" &&  isset($_POST['select-type'])) {
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+
+    // Ваш SQL-запрос для обновления данных пользователя
+    $sql = "UPDATE data_registration SET name = :name, surname = :surname WHERE id = :id";
+
+    $stmt = $connection->prepare($sql);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':id', $_GET['id']); // Получаем id пользователя из URL
+    $stmt->execute();
+
+    // Перенаправление на страницу со списком пользователей после обновления
+    header("Location: admin-user-edit.php");
+    exit();
+}
 
 $isSubmit = false;
 $errMsgEmpty = "";
@@ -380,11 +400,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['surname'] = $user['surname'];
                 $_SESSION['email'] = $user['email'];
-                // prints($_SESSION['name']);
+                
+                if(trim($user['email'])===  $email && password_verify($pass, $storedHash) === true && $email === trim('admin@gmail.com')){
 
+                    header('location:' . BASE_URL . 'admin_profile.php');
+
+                }else{
+                  
+                    
                 header('location:' . BASE_URL . 'profile.php');
+
+                }
             } else {
+
                 $errMsgEmpty = 'логин или пароль не правельный';
+
             }
         }
     }

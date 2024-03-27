@@ -37,17 +37,17 @@
     </div>
 
     <div class="seconds">
-        <a class="change-goal" href="">Change goal </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="change-goal" href="\meal-ideas-lose-fat.php">Lose fat </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 12L10 8L6 4" stroke="#109DD2" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </div>
     <div class="seconds">
-        <a class="change-goal" href="">Change goal </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="change-goal" href="\meal-ideas-maintain-weight.php">Maintain weight </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 12L10 8L6 4" stroke="#109DD2" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </div>
     <div class="seconds">
-        <a class="change-goal" href="">Favorite dish </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="change-goal" href="\meal-ideas-build-muscle.php">Build muscle </a><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 12L10 8L6 4" stroke="#109DD2" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </div>

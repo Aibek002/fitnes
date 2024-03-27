@@ -23,106 +23,120 @@
   margin-top: 20px;
 }
 .first-flex {
-    border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
 
-    width: 390px;
-    height: 64px;
-    background: #343434;
-    text-align: left;
+  width: 390px;
+  height: 64px;
+  background: #343434;
+  text-align: left;
   position: relative;
 }
-.second-flex{
-position: absolute;
-top: 25%;
-background: #ffffff;
-border-radius: 30px 30px 0 0;
-padding: 20px 10px;
-width: 390px;
-height: 551px;
-display: flex;
-flex-direction: column;
-align-items: center;
+.second-flex {
+  position: absolute;
+  top: 27%;
+  background: #ffffff;
+  border-radius: 30px 30px 0 0;
+  padding: 20px 10px;
+  width: 390px;
+  height: 551px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row{
+  /* width: 10]/20%; */
+  flex-wrap: nowrap !important;
+}
+.date-plan {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+  padding: 10px 0 0 30px;
+  color: #ececec;
+}
+.first-box {
+  border: 1px solid #26bfbf;
+  border-left: 5px solid #26bfbf;
+  border-radius: 12px;
+  width: 329px;
+  height: 129px;
+  box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
+  background: #fff;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.second-box {
+  border: 1px solid #89afff;
+  border-left: 5px solid #89afff;
+  border-radius: 12px;
+  width: 329px;
+  height: 129px;
+  box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
+  background: #fff;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.third-box {
+  border: 1px solid #ffb017;
+  border-left: 5px solid #ffb017;
+  border-radius: 12px;
+  width: 329px;
+  height: 129px;
+  box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
+  background: #fff;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.date-box {
+  margin: 10px 0 0 20px;
+  width: 200px;
+  display: flex;
+  justify-content: baseline;
+}
+.date-box p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: rgba(154, 154, 154, 0.9);
+  margin: 0 0 0 10px;
+}
+.title {
+  font-family: var(--font8);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 0.5;
+  color: #000;
+  text-align: left;
+  margin: 10px 0 0 30px;
+}
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #585a66;
+  text-align: left;
+  margin: 5px 0 0 30px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
 
+.row {
+  margin-bottom: 10px;
 }
-.date-plan{
-    font-family: var(--font-family);
-font-weight: 500;
-font-size: 14px;
-line-height: 160%;
-padding: 10px 0 0 30px;
-color: #ececec;
-}
-.first-box{
-    border: 1px solid #26bfbf;
-    border-left: 5px  solid #26bfbf;
-border-radius: 12px;
-width: 329px;
-height: 129px;
-box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
-background: #fff;
-margin: 20px 0 0 0 ;
-display: flex;
-flex-direction: column;
-align-items: left;
-}
-.second-box{
-    border: 1px solid #89afff;
-    border-left: 5px  solid #89afff;
-border-radius: 12px;
-width: 329px;
-height: 129px;
-box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
-background: #fff;
-margin: 20px 0 0 0 ;
-display: flex;
-flex-direction: column;
-align-items: left;
-}
-.third-box{
-    border: 1px solid #ffb017;
-    border-left: 5px  solid #ffb017;
-border-radius: 12px;
-width: 329px;
-height: 129px;
-box-shadow: 0 4px 8px 0 rgba(28, 37, 44, 0.05);
-background: #fff;
-margin: 20px 0 0 0 ;
-display: flex;
-flex-direction: column;
-align-items: left;
-}
-.date-box{
-    margin: 10px 0 0 20px;
-   width: 200px;
-   display: flex;
-   justify-content: baseline;
-    
-}
-.date-box p{
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 140%;
-    color: rgba(154, 154, 154, 0.9);
-    margin: 0 0 0 10px ;
-}
-.title{
-    font-family: var(--font8);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 120%;
-    color: #000;
-    text-align: left;
-    margin: 10px 0 0 30px;
-}
-.subtitle{
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 140%;
-    color: #585a66;
-    text-align: left;
-    margin: 5px 0 0 30px;
 
-
+.today {
+  background-color: #007bff;
+  color: #fff;
 }
