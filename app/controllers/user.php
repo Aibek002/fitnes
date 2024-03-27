@@ -25,7 +25,7 @@ $user = selectOne('data_registration', ['id_user']);
 // Вызываем функцию selectOne для получения данных из таблицы
 // 'users_information_for_calculator' для заданных условий
 $data = selectOne('users_information_for_calculator', ['goal'], ['id_user' => $id_user]);
-$selected=$_SESSION['select-type-food'] ;
+$selected = $_SESSION['select-type-food'];
 
 $type = strtolower($selected);
 $food = selectAll('food', ['type' => $type]);
@@ -128,7 +128,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['select-type'])) {
         case 'Mediterranean':
             header('Location: ' . BASE_URL . 'mediterranean.php');
             break;
-
     }
 }
 
@@ -409,8 +408,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
     ];
     $feed = insert('feedback_users', $data_feedback);
     if ($feed) {
-        header('location:' . BASE_URL);
+        header('location:' . BASE_URL . 'profile.php');
     } else {
         echo 'error';
+    }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['button-feedback-submit'])) {
+        $selectedEmojis = $_POST['selected-emojis'];
+        $selectedReasons = $_POST['selected-reasons'];
+        $data_feedback = [
+            'estimation' => implode( " , ", $selectedEmojis ) , // Объединяем выбранные эмодзи в строку
+            'support' => implode(", ", $selectedReasons), 
+           
+        ];
+        $feed = insert('support_service', $data_feedback);
+        if ($feed) {
+            header('location:' . BASE_URL . 'profile.php');
+        } else {
+            echo 'error';
+        }
+        // Обработка выбранных эмодзи
+        if (!empty($selectedEmojis)) {
+            echo "Selected Emojis: ";
+            foreach ($selectedEmojis as $emoji) {
+                echo $emoji . ", ";
+            }
+        }
+
+        // Обработка выбранных причин
+        if (!empty($selectedReasons)) {
+            echo "<br>Selected Reasons: ";
+            foreach ($selectedReasons as $reason) {
+                echo $reason . ", ";
+            }
+        }
     }
 }
