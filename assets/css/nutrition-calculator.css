@@ -1,0 +1,259 @@
+body {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  .text {
+    position: relative;
+    margin-bottom:16px;
+    text-align: center;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; 
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    background-color: #1F64FF;
+    z-index: 9999;
+    
+  }
+  
+  .back-btn img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+    .calculator {
+      max-width: 90%;
+      margin: 20px auto;
+      padding: 100px 10px 100px 10px;
+      text-align: left;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 13px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    /* button {
+    width: 100%;
+      padding: 10px 20px;
+      background-color: #1F64FF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 24px;
+    } */
+
+    button:hover {
+      background-color: #1F64FF;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .info {
+        margin-bottom: 20px;
+
+    }
+
+    .goal-selector {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      height: 50px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      justify-content: space-between;
+      
+    
+    }
+    .goal-selector-2{
+      display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    /* justify-content: space-between; */
+    }
+    .goal-selector-2 label , .goal-selector-2 input{
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: inherit;
+    }
+    .result {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+  }
+  .result strong{
+    color: #007bff;
+  }
+  .result h2{
+    font-weight: 800;
+    font-size: 19px
+  }
+  .result p{
+    text-align: left;
+  }
+    .goal-selector label , .goal-selector input{
+      width: 35%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: inherit;
+    }
+    .goal-option-3 {
+      width: 34%;
+      cursor: pointer;
+      
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+    }
+
+    .goal-option-2 {
+      width: 50%;
+      cursor: pointer;
+      
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+
+    }
+    .btn-check:checked + .btn-outline-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+  }
+  
+  .btn-outline-primary {
+      color: #007bff;
+      border-color: #007bff;
+  }
+  
+  .btn-outline-primary:not(:checked) {
+      color: inherit;
+      border-color: #ced4da; /* Цвет бордера для невыбранной опции */
+  }
+  
+    .goal-option {
+      width: 100%;
+      cursor: pointer;
+      border: 1px solid #000000;
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+    }
+
+    #goal {
+        width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 10px 0px;
+      border-radius: 5px;
+
+    }
+
+    .selected {
+      background-color: #1F64FF;
+      color: #fff;
+    }
+
+    #goal-selected {
+    display: none;
+  }
+
+  #lose{
+    display: none;
+  }
+  #gain{
+    display: none;
+  }
+  #diet-plan{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 132%;
+    color: #0d0d0d;
+    margin-bottom: 20px;
+  }
+
+  .continue-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1F64FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    justify-content: center;
+    display: inline-flex;
+      align-items: center;
+    font-size: 23px;
+  }
+  
+  .continue-btn img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+ 
+
+  .input-with-suffix {
+    position: relative;
+    display: inline-block;
+  }
+
+  .input-with-suffix input {
+    padding-right: 30px; /* Adjust as needed */
+  }
+
+  .input-with-suffix span {
+    position: absolute;
+    right: 8px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #333; /* Adjust color as needed */
+  }
