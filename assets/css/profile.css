@@ -21,6 +21,7 @@ body {
   display: flex;
   padding: 10px 30px;
   justify-content: space-between;
+ 
 }
 
 .flex-second-item {
@@ -29,7 +30,22 @@ body {
   align-items: center;
   padding: 10px;
 }
-
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff00;
+}
+.g{
+  font-size: small;
+    color: gray;
+}
 .logo_user {
   border-radius: 50%;
   border: 2px solid #1F64FF;
@@ -84,7 +100,7 @@ body {
   font-size: 12px;
   line-height: 167%;
   text-align: left;
-  color: #1F64FF;
+  color: #3e4a7c;
   padding: 0 10px;
   margin: auto;
 }

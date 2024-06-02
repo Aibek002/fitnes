@@ -1,63 +1,72 @@
 .image-container {
-    position: relative;
-    padding-top: 10%;
-    width: 100%;
-    height: auto;
-    align-items: center;
-  }
+  position: relative;
+  padding-top: 10%;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
 
-  .background-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .overlay-image {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    height: auto;
-    left: 0;
-    z-index: 2;
-  }
+.background-image {
+  width: 100%;
+  height: auto;
+}
 
-  .text-t-container {
-    position: absolute;
-    left: 50%;
-    top: 76%;
-    transform: translateX(-50%);
-    color: #000000;
-    font-family: 'Lato';
-    text-align: center;
-    width: 100%;
-  }
+.overlay-image {
+  position: absolute;
+  top: 220px;
+  width: 100%;
+  height: auto;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, #6e9bff85, transparent);
+}
+
+.text-t-container {
+  position: absolute;
+  left: 50%;
+  top: 450px;
+  transform: translateX(-50%);
+  color: #000000;
+  font-family: 'Lato';
+  text-align: center;
+  width: 100%;
+}
 
 h1 {
-    width: 50%;
-    left: 50%;
-    transform: translateX(50%);
-    color: #000000;
-    font-family: 'Lato';
-    font-size: 40px;
-    text-align: center;
+  font-family: var(--third-family);
+font-weight: 500;
+font-size: 45px;
+letter-spacing: 0.05em;
+text-align: center;
+color: #2f3058;
+width: 80%;
+margin-left: 10%;
 }
 
 p {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 132%;
-  color: #000;
+  font-family: var(--third-family);
+font-weight: 400;
+font-size: 18px;
+line-height: 132%;
+color: #2f3058;
 }
 
-.btn{
+.btn {
   position: absolute;
-  right: 5%;
-  background-color: #1F64FF;
+  right: 40px;
+  bottom: 40px;
+  background-color: #ffd700;
   font-family: 'Lato';
   color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 30%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 180px;
+  height: 50px;
+  font-family: var(--third-family);
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
 }
