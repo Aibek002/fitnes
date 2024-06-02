@@ -21,24 +21,18 @@ session_start();
 <body>
 
     <main>
-        <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png"></button>
+        <button type="button" class="back-btn" onclick="goBack()"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 15L11 7M3 15L11 23M3 15H28" stroke="#79A2FF" stroke-width="2" />
+</svg></button>
        
 
         <div class="container">
             <div class="text">
-                <h1> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
-                        <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
-                            <rect width="25.0799" height="10" transform="matrix(0.91707 0.398726 0 1 0 0)" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_111_120)">
-                            <rect width="25.0799" height="10" transform="matrix(0.91707 -0.398726 0 1 0 0)" fill="#1D3EB3" />
-                            <rect width="25.0799" height="25.0799" transform="matrix(0.91707 0.398726 -0.91707 0.398726 11.8477 4.54492)" fill="#FAC02B" />
-                        </g>
-                    </svg>
-                    <span class="login-title">Log In</span>
+                <h1> <img src="./assets/images/logoType.png" alt="">
+                    <span class="login-title">Sign in</span>
                 </h1>
                 <div class="text1">
-                    <p>Don't have an account? <a href="/register.php">Register </a></p>
+                    <p>Don't have an account? <a href="/register.php"> Sign up</a></p>
                 </div>
                 <div class="form-floating">
                     <p class="errMsg" for="floatingInput"><?php echo  $_SESSION['err_msg'] ?></p>
@@ -48,8 +42,8 @@ session_start();
 
             <form action="login.php" method="post">
                 <div class="input-group">
-                    <p>Email or username</p>
-                    <input name="email" type="email" id="Email" required>
+                    <p>Email</p>
+                    <input name="email" type="email" id="Email" placeholder="Enter your email">
                 </div>
                 <div class="input-group">
                     <p>Password </p>
@@ -75,7 +69,7 @@ session_start();
 -->
         </div>
     </main>
-
+<p class="footer-text">© 2024 FitMe.</p>
     <script src="./assets/js/goBack.js"></script>
     
 </body>
