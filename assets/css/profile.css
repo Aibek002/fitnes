@@ -191,10 +191,16 @@ body {
 
   display: flex;
   padding: 10px 20px;
+  text-decoration: none;
   /* justify-content: space-around; */
 
 }
-
+.svg{
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .flex-five-item a span {
   text-decoration: none;
   font-family: var(--font5);

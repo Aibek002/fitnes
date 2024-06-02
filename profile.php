@@ -148,11 +148,13 @@ if (trim($_SESSION['email']) == 'admin@gmail.com') {
             </div>
             <div class="flex-five-item">
                 <a href="http://">
+                <div class="svg"> 
 
-                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.51514 7.68825C1.57539 5.46748 2.67366 2.92917 5.7539 2.17809C7.37416 1.78233 9.16257 2.01567 10.5096 2.78267C11.7839 2.03689 13.638 1.78498 15.2565 2.17809C18.3367 2.92917 19.442 5.46748 18.5031 7.68825C17.0405 11.2083 10.5096 13.9197 10.5096 13.9197C10.5096 13.9197 4.02679 11.2494 2.51514 7.68825Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path opacity="0.4" d="M14.0137 4.44141C14.9508 4.67078 15.6129 5.30386 15.6926 6.04699" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.51514 7.68825C1.57539 5.46748 2.67366 2.92917 5.7539 2.17809C7.37416 1.78233 9.16257 2.01567 10.5096 2.78267C11.7839 2.03689 13.638 1.78498 15.2565 2.17809C18.3367 2.92917 19.442 5.46748 18.5031 7.68825C17.0405 11.2083 10.5096 13.9197 10.5096 13.9197C10.5096 13.9197 4.02679 11.2494 2.51514 7.68825Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+  <path opacity="0.4" d="M14.0137 4.44141C14.9508 4.67078 15.6129 5.30386 15.6926 6.04699" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+                </div>
                     <span>Health Information</span>
                     <strong>
                         <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,11 +162,13 @@ if (trim($_SESSION['email']) == 'admin@gmail.com') {
                         </svg></strong>
                 </a>
                 <a href="http://">
+                <div class="svg"> 
 
-                <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71805 14.2064C12.1751 14.2064 14.237 13.6035 14.4361 11.1838C14.4361 8.76566 12.9986 8.92116 12.9986 5.95426C12.9986 3.63678 10.9152 1 7.71805 1C4.52087 1 2.43754 3.63678 2.43754 5.95426C2.43754 8.92116 1 8.76566 1 11.1838C1.19992 13.6127 3.26183 14.2064 7.71805 14.2064Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-  <path opacity="0.4" d="M9.60634 16.7139C8.52818 17.9761 6.84628 17.9911 5.75781 16.7139" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-</svg>
+                    <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71805 14.2064C12.1751 14.2064 14.237 13.6035 14.4361 11.1838C14.4361 8.76566 12.9986 8.92116 12.9986 5.95426C12.9986 3.63678 10.9152 1 7.71805 1C4.52087 1 2.43754 3.63678 2.43754 5.95426C2.43754 8.92116 1 8.76566 1 11.1838C1.19992 13.6127 3.26183 14.2064 7.71805 14.2064Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.4" d="M9.60634 16.7139C8.52818 17.9761 6.84628 17.9911 5.75781 16.7139" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
                     <span>Feedback</span>
 
                     <strong><svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,11 +176,13 @@ if (trim($_SESSION['email']) == 'admin@gmail.com') {
                         </svg></strong>
                 </a>
                 <a href="http://">
+                <div class="svg"> 
 
-                <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3042 11.3818C6.97863 11.3818 4.13867 11.8155 4.13867 13.5524C4.13867 15.2894 6.96061 15.7386 10.3042 15.7386C13.6298 15.7386 16.4689 15.3042 16.4689 13.568C16.4689 11.8318 13.6478 11.3818 10.3042 11.3818Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-  <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M10.3036 8.90487C12.486 8.90487 14.2548 7.37845 14.2548 5.49603C14.2548 3.61361 12.486 2.08789 10.3036 2.08789C8.12124 2.08789 6.35159 3.61361 6.35159 5.49603C6.34422 7.37209 8.10158 8.89851 10.2758 8.90487H10.3036Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-</svg>
+                    <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3042 11.3818C6.97863 11.3818 4.13867 11.8155 4.13867 13.5524C4.13867 15.2894 6.96061 15.7386 10.3042 15.7386C13.6298 15.7386 16.4689 15.3042 16.4689 13.568C16.4689 11.8318 13.6478 11.3818 10.3042 11.3818Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                        <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M10.3036 8.90487C12.486 8.90487 14.2548 7.37845 14.2548 5.49603C14.2548 3.61361 12.486 2.08789 10.3036 2.08789C8.12124 2.08789 6.35159 3.61361 6.35159 5.49603C6.34422 7.37209 8.10158 8.89851 10.2758 8.90487H10.3036Z" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
                     <span>Support Service</span>
 
                     <strong><svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,11 +191,13 @@ if (trim($_SESSION['email']) == 'admin@gmail.com') {
                 </a>
                 <a href="http://">
 
-                    <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.4" d="M12.1393 4.5426V3.84285C12.1393 2.3166 10.6955 1.0791 8.91491 1.0791H4.64928C2.86953 1.0791 1.42578 2.3166 1.42578 3.84285V12.1904C1.42578 13.7166 2.86953 14.9541 4.64928 14.9541H8.92366C10.699 14.9541 12.1393 13.7204 12.1393 12.1986V11.4914" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M18.0828 8.0166H7.54688" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M15.5215 5.83008L18.0835 8.01633L15.5215 10.2033" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <div class="svg"> 
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M12.1393 4.5426V3.84285C12.1393 2.3166 10.6955 1.0791 8.91491 1.0791H4.64928C2.86953 1.0791 1.42578 2.3166 1.42578 3.84285V12.1904C1.42578 13.7166 2.86953 14.9541 4.64928 14.9541H8.92366C10.699 14.9541 12.1393 13.7204 12.1393 12.1986V11.4914" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M18.0828 8.0166H7.54688" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15.5215 5.83008L18.0835 8.01633L15.5215 10.2033" stroke="#0601B4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
                     <span>Log out</span>
 
                     <strong><svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +205,7 @@ if (trim($_SESSION['email']) == 'admin@gmail.com') {
                         </svg></strong>
                 </a>
             </div>
-    <?php include './app/include/footer.php' ?>
+            <?php include './app/include/footer.php' ?>
 
         </div>
     <?php else : ?>
