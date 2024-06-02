@@ -1,0 +1,176 @@
+body {
+    font-family: "Lato";
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(179deg, #f5f5f5 0%, #79a2ff 100%);
+    height: 100vh;
+}
+
+.container {
+    max-width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    top: 100px;
+}
+
+.get-code-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 5px;
+
+}
+
+#codeInput {
+    display: flex;
+    justify-content: center;
+}
+
+.subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 132%;
+    color: #000;
+}
+
+.subtext {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 132%;
+    color: #827e7e;
+}
+
+.text {
+    position: relative;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.back-btn {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    /* Makes the button circular */
+    overflow: hidden;
+    /* Clips the rectangular image to fit within the circle */
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+
+.text1 {
+    display: flex;
+    width: 100%;
+    height: 28px;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    flex-shrink: 0;
+    font-size: 15px;
+    position: relative;
+    top: 90px;
+}
+
+.p1 {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 132%;
+    color: #4a4c5f;
+    margin: 0;
+}
+
+.p2 {
+    font-family: var(--font3);
+    font-weight: 400;
+    font-size: 13px;
+    color: #4a4c5f;
+}
+
+form {
+    position: relative;
+    top: 75px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    padding-top: 2px;
+}
+
+#Email {
+    width: 100%;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background: transparent;
+    color: #3e405c;
+    box-shadow: 1px 4px 10px 0 rgba(31, 100, 255, 0.25);
+
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 10px;
+    background: #ffd700;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    font-size: 23px;
+}
+
+.continue-btn img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.New-password-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+#code,
+#password {
+    border: 1px solid #000;
+    border-radius: 8px;
+    width: 317px;
+    height: 42px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 132%;
+    padding-left: 20px;
+    color: #6f6e6e;
+}
+
+input[type="text"] {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    box-shadow: 1px 4px 10px 0 rgba(31, 100, 255, 0.25);
+}
