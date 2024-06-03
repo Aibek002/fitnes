@@ -11,29 +11,24 @@ include './app/controllers/source_user.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/support_service.css">
+    <link rel="stylesheet" href="../assets/css/feedback.css">
     <title>Feedback </title>
 </head>
 
 <body>
    
-    <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png"></button>
+    <button type="button" class="back-btn" onclick="goBack()"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 15L11 7M3 15L11 23M3 15H28" stroke="white" stroke-width="2" />
+</svg></button>
     <script src="./assets/js/goBack.js"></script>
     <main>
         <div class="container">
             <div class="text">
                 <h1 class="register-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
-                        <mask id="mask0_111_120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="23" height="20">
-                            <rect width="25.0799" height="10" transform="matrix(0.91707 0.398726 0 1 0 0)" fill="#D9D9D9" />
-                        </mask>
-                        <g mask="url(#mask0_111_120)">
-                            <rect width="25.0799" height="10" transform="matrix(0.91707 -0.398726 0 1 0 0)" fill="#1D3EB3" />
-                            <rect width="25.0799" height="25.0799" transform="matrix(0.91707 0.398726 -0.91707 0.398726 11.8477 4.54492)" fill="#FAC02B" />
-                        </g>
-                    </svg>
-
-                    <span style="display: inline-block; vertical-align: middle;">Feedback</span>
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22.938 17.8625C23.163 17.9625 23.4005 18 23.6255 18C24.138 18 24.638 17.7875 25.0005 17.4L27.9255 14.25H31.7505C33.813 14.25 35.5005 12.5625 35.5005 10.5V4.25C35.5005 2.1875 33.813 0.5 31.7505 0.5H21.7505C19.688 0.5 18.0005 2.1875 18.0005 4.25V10.4875C18.0005 12.55 19.688 14.2375 21.7505 14.2375V16.1125C21.7505 16.9 22.213 17.575 22.938 17.8625ZM20.5005 4.25C20.5005 3.5625 21.063 3 21.7505 3H31.7505C32.438 3 33.0005 3.5625 33.0005 4.25V10.5C33.0005 11.1875 32.438 11.75 31.7505 11.75H26.8255L24.2505 14.525V11.75H21.7505C21.063 11.75 20.5005 11.1875 20.5005 10.5V4.25ZM11.1255 20.5C7.67548 20.5 4.87548 17.7 4.87548 14.25C4.87548 10.8 7.67548 8 11.1255 8C14.5755 8 17.3755 10.8 17.3755 14.25C17.3755 17.7 14.5755 20.5 11.1255 20.5ZM11.1255 10.5C9.06298 10.5 7.37548 12.1875 7.37548 14.25C7.37548 16.3125 9.06298 18 11.1255 18C13.188 18 14.8755 16.3125 14.8755 14.25C14.8755 12.1875 13.188 10.5 11.1255 10.5ZM11.1255 35.4875C7.50048 35.4875 4.72548 34.4875 2.85049 32.5275C0.436735 30.0087 0.492985 26.7963 0.499235 26.48V26.4587C0.500485 24.575 2.07548 23 4.02549 23H18.2255C20.163 23 21.7505 24.5737 21.7505 26.5212V26.5337C21.7555 26.7612 21.8255 29.9963 19.4005 32.54C17.5255 34.5013 14.7505 35.5 11.1255 35.5V35.4875ZM4.02549 25.4975C3.46299 25.4975 3.00048 25.96 3.00048 26.5225V26.53C2.99673 26.7087 2.96548 29.0613 4.67548 30.83C6.05049 32.2663 8.22548 32.99 11.1255 32.99C14.0255 32.99 16.188 32.265 17.5755 30.83C19.3255 29.0187 19.263 26.5963 19.2505 26.5713C19.2505 25.9587 18.788 25.4975 18.2255 25.4975H4.02549Z" fill="white" />
+</svg>
+                    <span >Feedback</span>
                 </h1>
                 <p for="floatingInput"><?php echo $errMsgEmpty ?></p>
             </div>
