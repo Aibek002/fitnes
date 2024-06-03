@@ -19,12 +19,59 @@ if ($_SESSION['name'] == '') {
     <link href="assets/js/nutrition-calculator.js" rel="stylesheet">
     <title>Nutrition Calculator</title>
     <style>
+    /* Медиазапрос для настольных устройств */
+    @media (min-width: 768px) {
+        .mobile-only {
+            display: none;
+        }
 
-    </style>
+        .desktop-message {
+            display: block;
+        }
+
+
+        main {
+            display: none;
+        }
+        body{
+            background: #fff;
+        }
+    }
+
+    /* Медиазапрос для мобильных устройств */
+    @media (max-width: 767px) {
+        .mobile-only {
+            display: block;
+        }
+
+        .desktop-message {
+            display: none;
+        }
+
+        main {
+            display: block;
+        }
+    
+    }
+</style>
 </head>
 
 <body class='body'>
-    <button type="button" class="back-btn" onclick="goBack()"><img src="assets\images\back.png"></button>
+<div class="desktop-message">
+        <!-- Сообщение для настольных устройств -->
+        <h1>Этот сайт доступен только на мобильных устройствах</h1>
+    </div>
+    <main>
+    <button type="button" class="back-btn" onclick="goBack()"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_1426_1706)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.07306 0.355513C1.84404 0.134321 1.53731 0.0119277 1.21893 0.0146943C0.900547 0.017461 0.595989 0.145166 0.37085 0.370305C0.145712 0.595443 0.0180068 0.900001 0.0152402 1.21838C0.0124735 1.53676 0.134867 1.8435 0.356059 2.07251L6.78327 8.49973L0.356059 14.9269C0.240082 15.039 0.147575 15.1729 0.0839355 15.3211C0.020296 15.4692 -0.0132015 15.6286 -0.0146026 15.7898C-0.0160037 15.951 0.0147199 16.1109 0.0757752 16.2602C0.136831 16.4094 0.226995 16.545 0.341008 16.659C0.45502 16.773 0.590598 16.8632 0.739829 16.9242C0.88906 16.9853 1.04896 17.016 1.21019 17.0146C1.37142 17.0132 1.53076 16.9797 1.67891 16.9161C1.82705 16.8524 1.96104 16.7599 2.07306 16.6439L8.50027 10.2167L14.9275 16.6439C15.1565 16.8651 15.4632 16.9875 15.7816 16.9848C16.1 16.982 16.4046 16.8543 16.6297 16.6292C16.8548 16.404 16.9825 16.0995 16.9853 15.7811C16.9881 15.4627 16.8657 15.156 16.6445 14.9269L10.2173 8.49973L16.6445 2.07251C16.8657 1.8435 16.9881 1.53676 16.9853 1.21838C16.9825 0.900001 16.8548 0.595443 16.6297 0.370305C16.4046 0.145166 16.1 0.017461 15.7816 0.0146943C15.4632 0.0119277 15.1565 0.134321 14.9275 0.355513L8.50027 6.78273L2.07306 0.355513Z" fill="#161455" fill-opacity="0.8" />
+  </g>
+  <defs>
+    <clipPath id="clip0_1426_1706">
+      <rect width="17" height="17" fill="white" />
+    </clipPath>
+  </defs>
+</svg></button>
     <script src="./assets/js/goBack.js"></script>
 
     <div class="calculator">
@@ -157,9 +204,7 @@ if ($_SESSION['name'] == '') {
     <script src="assets/js/nutrition-calculator.js"></script>
     <script src="./assets/js/goBack.js"></script>
 
-    <?php
-    include './app/include/footer.php'
-    ?>
+    </main>
 </body>
 
 </html>

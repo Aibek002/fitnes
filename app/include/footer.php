@@ -6,7 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../assets/css/footer.css">
 </head>
-
+<style>
+  @media (min-width: 768px) {
+    .footer{
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+   
+}
+</style>
 <body>
   <div style="left:0" class="footer">
 

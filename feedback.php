@@ -14,13 +14,52 @@ include './app/controllers/source_user.php'
     <link rel="stylesheet" href="../assets/css/feedback.css">
     <title>Feedback </title>
 </head>
+<style>
+    /* Медиазапрос для настольных устройств */
+    @media (min-width: 768px) {
+        .mobile-only {
+            display: none;
+        }
 
+        .desktop-message {
+            display: block;
+        }
+
+
+        main {
+            display: none;
+        }
+        body{
+            background: #fff;
+        }
+    }
+
+    /* Медиазапрос для мобильных устройств */
+    @media (max-width: 767px) {
+        .mobile-only {
+            display: block;
+        }
+
+        .desktop-message {
+            display: none;
+        }
+
+        main {
+            display: block;
+        }
+    
+    }
+</style>
 <body>
-   
+<div class="desktop-message">
+        <!-- Сообщение для настольных устройств -->
+        <h1>Этот сайт доступен только на мобильных устройствах</h1>
+    </div>
     <button type="button" class="back-btn" onclick="goBack()"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M3 15L11 7M3 15L11 23M3 15H28" stroke="white" stroke-width="2" />
 </svg></button>
     <script src="./assets/js/goBack.js"></script>
+
     <main>
         <div class="container">
             <div class="text">
