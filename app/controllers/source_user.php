@@ -11,7 +11,7 @@ require './PHPMailer/src/SMTP.php';
 
 
 $sql = "SELECT * FROM data_registration";
-$stmt = $connection->query($sql);
+$stmt =$conn->query($sql);
 $User = '';
 
 
@@ -26,7 +26,7 @@ $userInfo = selectOne('users_information_for_calculator', ['id_user' => $User]);
 //calculator
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
     $sql = "SELECT * FROM users_information_for_calculator";
-    $stmt = $connection->query($sql);
+    $stmt =$conn->query($sql);
     $User = selectOne('users_information_for_calculator', ['id_user' => $_SESSION['id_user']]);
 
     echo "/" . $_SESSION['id_user'] . '/' . $User['id_user'] .  "/";
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nutrition'])) {
         $_SESSION['bodyfat'] = $params['bodyfat'];;
         $_SESSION['acivityLevel'] = $params['activityLevel'];
 
-        $query = $connection->prepare($sql);
+        $query =$conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
 
@@ -350,7 +350,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['re-password'])) {
     $sql = "SELECT id_user FROM data_registration WHERE email = ' $email '";
 
 
-    $query = $connection->prepare($sql);
+    $query =$conn->prepare($sql);
     $query->execute();
     dbCheckError($query);
     $row = $query->fetch(PDO::FETCH_ASSOC);
@@ -424,7 +424,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-feedback'])) {
 
     $sql = "INSERT INTO feedback_users (name, feedbackTitle, email, feedback, tel_number) 
     VALUES ('$name', '$feed', '$em', '$fee', '$tel')";
-    $stmt = $connection->prepare($sql);
+    $stmt =$conn->prepare($sql);
     $stmt->execute();
 
     header('location: profile.php');
@@ -447,7 +447,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['button-feedback-submit
 
         $sql = "INSERT INTO support_service (estimation , support) 
         VALUES ('$est', '$support')";
-        $stmt = $connection->prepare($sql);
+        $stmt =$conn->prepare($sql);
         $stmt->execute();
 
         header('location: profile.php');

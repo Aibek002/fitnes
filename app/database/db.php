@@ -1,4 +1,4 @@
- <?php
+<?php
     include('connectDB.php');
 
 
@@ -14,7 +14,7 @@
     // --request on database--
     function selectOne($table, $params = [])
     {
-        global $connection;
+        global $conn;
 
         $sql = 'SELECT * FROM ' . $table;
         $where = ''; // Инициализируем строку для условия WHERE
@@ -32,14 +32,14 @@
             $sql .= ' WHERE ' . $where; // Добавляем условие WHERE к запросу, если оно сформировано
         }
 
-        $query = $connection->prepare($sql);
+        $query = $conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
         return $query->fetch();
     }
 
     function selectAll($table, $param = []) {
-        global $connection;
+        global $conn;
         $sql = 'SELECT * FROM ' . $table;
         if (!empty($param)) {
             $sql .= ' WHERE ';
@@ -52,10 +52,10 @@
             }
             $sql .= implode(' AND ', $params);
         }
-        $query = $connection->prepare($sql);
+        $query = $conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
-        return $query->fetchAll();
+        return $query->fetch();
     }
     
 
@@ -63,7 +63,7 @@
     // ---insert data---
     function insert($table, $parram)
     {
-        global $connection;
+        global $conn;
         $i = 0;
         $coll = '';
         $mask = '';
@@ -82,18 +82,18 @@
         $sql = "INSERT INTO $table ($coll) VALUES ($mask)";
         // print($sql);
         // exit();
-        $query = $connection->prepare($sql);
+        $query = $conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
 
-        $id = $connection->lastInsertId();
+        $id = $conn->lastInsertId();
 
         return $id; // Возвращаем ID
     }
 
     function update($table, $id, $parram)
     {
-        global $connection;
+        global $conn;
         $i = 0;
         $str = '';
 
@@ -109,13 +109,13 @@
         $sql = "UPDATE $table SET $str  WHERE  id_user = $id ";
         // prints($sql);
         // exit();
-        $query = $connection->prepare($sql);
+        $query = $conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
     }
     function delete($table, $id)
     {
-        global $connection;
+        global $conn;
         $i = 0;
         $str = '';
 
@@ -123,7 +123,7 @@
         $sql = "DELETE FROM $table WHERE id_user=$id ";
         // prints($sql);
         // exit();
-        $query = $connection->prepare($sql);
+        $query = $conn->prepare($sql);
         $query->execute();
         dbCheckError($query);
     }

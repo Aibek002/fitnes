@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+require '/app/controllers/source_user.php';
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>

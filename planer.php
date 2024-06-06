@@ -14,6 +14,7 @@ if ($data['age'] == '') {
     header('location: nutrition-calculator.php');
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -152,13 +153,13 @@ if ($data['age'] == '') {
                 <div class="first-box">
 
                     <div class="date-box">
-                        
-                        
-<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.0332 3.73112L8.49987 0.533203L15.9665 3.73112M1.0332 3.73112L8.49987 6.92904M1.0332 3.73112V3.7332M15.9665 3.73112L8.49987 6.92904M15.9665 3.73112V12.2665L8.49987 15.4665M15.9665 3.73112L8.49987 6.9332V15.4665M8.49987 6.92904V15.4665M8.49987 6.92904L1.0332 3.7332M8.49987 15.4665L1.0332 12.2665V3.7332" stroke="#26BFBF" stroke-linejoin="round" />
-                            </svg>
-                            <p>10:30 AM - 11:30 PM</p>
-                        
+
+
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.0332 3.73112L8.49987 0.533203L15.9665 3.73112M1.0332 3.73112L8.49987 6.92904M1.0332 3.73112V3.7332M15.9665 3.73112L8.49987 6.92904M15.9665 3.73112V12.2665L8.49987 15.4665M15.9665 3.73112L8.49987 6.9332V15.4665M8.49987 6.92904V15.4665M8.49987 6.92904L1.0332 3.7332M8.49987 15.4665L1.0332 12.2665V3.7332" stroke="#26BFBF" stroke-linejoin="round" />
+                        </svg>
+                        <p>10:30 AM - 11:30 PM</p>
+
 
                     </div>
                     <?php
@@ -166,20 +167,20 @@ if ($data['age'] == '') {
 
 
                     $id = $_SESSION['id_user'];
-                    $goal = $_SESSION['goaltext'];
+                    $goal = trim($_SESSION['goaltext']);
 
-                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = ' $goal ' ";
+                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = '$goal' ";
 
-                    $stmt = $connection->query($sql);
+                    $stmt = $conn->query($sql);
 
                     if (!$stmt) {
-                        echo "Ошибка выполнения запроса: " . $connection->errorInfo()[2];
+                        echo "Ошибка выполнения запроса: " . $conn->errorInfo()[2];
                     } else {
-                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Breakfast'  LIMIT 1";
-                        $foodStmt = $connection->query($foodSql);
+                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Завтрак'  LIMIT 1";
+                        $foodStmt = $conn->query($foodSql);
                         while ($row = $foodStmt->fetch(PDO::FETCH_ASSOC)) {
 
-                            echo '<p class="title">' . $row['type'] . '</p>';
+                            echo '<p class="title"> B</p>';
                             echo '<p class="subtitle">' .  '</br>' . $row['name'] . '</p>';
                             echo '<a href="planer.php?id=' . $row['id'] . '"><button class="btn" id="open-modal">
                             <div class="flex-cont"><p class="subtitles">' .  'gramm : '  . $row['protein'] . '</p>';
@@ -201,14 +202,13 @@ if ($data['age'] == '') {
                         <p>12:30 AM - 13:30 PM</p>
                     </div>
                     <?php
-
-                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = ' $goal ' ";
-                    $stmt = $connection->query($sql);
+                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = '$goal' ";
+                    $stmt = $conn->query($sql);
                     if (!$stmt) {
-                        echo "Ошибка выполнения запроса: " . $connection->errorInfo()[2];
+                        echo "Ошибка выполнения запроса: " . $conn->errorInfo()[2];
                     } else {
-                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Lunch'  LIMIT 1";
-                        $foodStmt = $connection->query($foodSql);
+                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Обед'  LIMIT 1";
+                        $foodStmt = $conn->query($foodSql);
                         while ($row = $foodStmt->fetch(PDO::FETCH_ASSOC)) {
                             echo '<p class="title">' . $row['type'] . '</p>';
                             echo '<p class="subtitle">' .  '</br>' . $row['name'] . '</p>';
@@ -229,16 +229,16 @@ if ($data['age'] == '') {
                     </div>
                     <?php
 
-                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = ' $goal ' ";
+                    $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = '$goal' ";
                     // echo $sql   ;
 
-                    $stmt = $connection->query($sql);
+                    $stmt = $conn->query($sql);
 
                     if (!$stmt) {
-                        echo "Ошибка выполнения запроса: " . $connection->errorInfo()[2];
+                        echo "Ошибка выполнения запроса: " . $conn->errorInfo()[2];
                     } else {
-                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Dinner'  LIMIT 1";
-                        $foodStmt = $connection->query($foodSql);
+                        $foodSql = "SELECT * FROM Food_Lose WHERE type = 'Ужин'  LIMIT 1";
+                        $foodStmt = $conn->query($foodSql);
                         while ($row = $foodStmt->fetch(PDO::FETCH_ASSOC)) {
                             echo '<p class="title">' . $row['type'] . '</p>';
                             echo '<p class="subtitle">' .  '</br>' . $row['name'] . '</p>';
@@ -266,21 +266,24 @@ if ($data['age'] == '') {
                         <?php
 
 
-                        $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = ' $goal ' ";
-                        // echo $sql   ;
+                        $sql = "SELECT * FROM users_information_for_calculator WHERE id_user = $id AND goal = '$goal' ";
+                        echo $sql   ;
 
-                        $stmt = $connection->query($sql);
+                        $stmt = $conn->query($sql);
 
                         if (!$stmt) {
-                            echo "Ошибка выполнения запроса: " . $connection->errorInfo()[2];
+                            echo "Ошибка выполнения запроса: " . $conn->errorInfo()[2];
                         } else {
                             $id = $_GET['id'];
                             $foodSql = "SELECT * FROM Food_Lose WHERE id=$id ";
-                            $foodStmt = $connection->query($foodSql);
+                            $foodStmt = $conn->query($foodSql);
                             while ($row = $foodStmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo $row['Recipe_Instructions'] . '</p>';
                             }
                         }
+                        error_reporting(E_ALL);
+                        ini_set('display_errors', 1);
+                        
                         ?>
                     <p></p>
                 </div>

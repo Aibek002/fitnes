@@ -1,16 +1,20 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$data = 'fitnes';
-$options=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC];
-try {
-    $connection = new PDO("mysql:host=$host;dbname=$data;charset=utf8;", $user, $pass,$options);
-    $conn = new mysqli($host, $user, $pass, $data);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-} catch (PDOException $i) {
-    die('errors');
-}
+$servername = "localhost";
+$username = "admin";
+$password = "Seitzhan767402";
+$dbname = "fitnes"; // замените на имя вашей базы данных
 
+try {
+    // Создание нового PDO соединения
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    
+    // Установка режима ошибок PDO на режим исключений
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // echo "Connected successfully";
+} catch (PDOException $e) {
+    // Обработка ошибок подключения
+    echo "Connection failed: " . $e->getMessage();
+    exit;
+}
+?>
