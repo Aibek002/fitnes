@@ -12,6 +12,26 @@ require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
 
 
+// Подключение к базе данных
+include './app/database/connectDB.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" &&  isset($_POST['select-type'])) {
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+
+    // Ваш SQL-запрос для обновления данных пользователя
+    $sql = "UPDATE data_registration SET name = :name, surname = :surname WHERE id = :id";
+
+    $stmt = $connection->prepare($sql);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':id', $_GET['id']); // Получаем id пользователя из URL
+    $stmt->execute();
+
+    // Перенаправление на страницу со списком пользователей после обновления
+    header("Location: admin-user-edit.php");
+    exit();
+}
 
 $isSubmit = false;
 $errMsgEmpty = "";
